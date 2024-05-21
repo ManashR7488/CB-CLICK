@@ -7,13 +7,76 @@
     <link rel="shortcut icon" href="./images/favIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link href='https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css' rel='stylesheet'/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./res/stylesheets/main.css">
     <link rel="stylesheet" href="./res/stylesheets/loco.css">
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body>
-    <main class="">
-        <h1>Hello</h1>
+    <!-- <div class="loader h-[100vh] w-[100vw] fixed z-[100] bg-white flex justify-center items-center">
+        <img src="./images/loading.gif" alt="">
+    </div> -->
+    <main class=" bg-[#000000]">
+        <nav class="px-5 h-[8vh] fixed z-[99] top-0 w-full flex items-center justify-between">
+            <div class="logoImg magnet ml-[5%] h-full">
+                <a href="">
+                    <img src="./images/logoImg.png" alt="" class=" object-cover h-full">
+                </a>
+            </div>
+            <div class="navLinkContainer h-[80%] text-sm font-jost font-light   bg-[#252525] w-[40%] rounded-[30px] text-white uppercase">
+                <ul class="flex h-full w-full justify-evenly items-center">
+                    <li class="magnet"><a href="#home">Home</a></li>
+                    <li class="magnet"><a href="">About</a></li>
+                    <li class="magnet"><a href="">Weddings</a></li>
+                    <li class="magnet"><a href="">Pre Wedding</a></li>
+                    <li class="magnet"><a href="">Services</a></li>
+                    <li class="magnet"><a href="">Explore</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="page1 bg-[#FFFEF8] h-screen w-full px-[5vw] pt-[9vh]" id="#home">
+            <div class="headingContainer pl-[5vw] pt-[4vw] leading-[18vh] w-full h-[52%] text-[7vw] uppercase font-josefin font-[300]">
+                <h1 class="headChild1 flex gap-0">chandan</h1>
+                <h1 class="headChild2 flex gap-[3vw]">photo gallery</h1>
+            </div>
+            <div class="description w-full h-[45%] flex justify-center items-center">
+                <div class="left h-full w-1/2 flex justify-start items-start gap-[4vw] pl-[5vw] pt-[2vw] leading-5 uppercase text-[0.8vw] font-inter">
+                    <div class="flex flex-col gap-[2vw]">
+                        <div>
+                            <h4 class=" font-extralight">About</h4>
+                            <h4 class="magnet font-[400] pl-2"><a href="">read more</a></h4>
+                        </div>
+                        <div>
+                            <h4 class=" font-extralight">Contact</h4>
+                            <h4 class=" font-[400] magnet pl-2">email address</h4>
+                            <h4 class=" font-[400] magnet pl-2">phone</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h4 class=" font-extralight">Social</h4>
+                            <h4 class=" font-[400] magnet pl-2"><a href="">instagram</a></h4>
+                            <h4 class=" font-[400] magnet pl-2"><a href="">facebook</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="right h-full w-1/2 ">
+                    <div class="up h-[50%] w-fit overflow-hidden px-[2.5vw]" id="page1Img">
+                        <img id="profileImg" class="object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+                    <div class="down h-fit py-3.5 w-full flex justify-between  items-start px-[1vw] text-sm">
+                        <div class="left h-full w-[50%] px-[1.5vw] ">
+                            <h1>Hi, I'm Chandan — a modern photo and videographer from paikmal bargarh. My interests lie in exploring innovative idea on photography, uncovering new ways to connect with peoples.</h1>
+                        </div>
+                        <div class="right h-full w-[50%] px-[1.5vw] ">
+                            <h1>I've spent more than 5 years collaborating closely with a diverse range of clients, striving to understand their needs and ensuring every project is customized to their unique goals.        </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

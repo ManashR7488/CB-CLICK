@@ -1,0 +1,10 @@
+
+
+.page1{
+    transform-origin: 50% 70%;
+}
+
+#page1Img{
+    transition: all 0.7s ease;
+}
+
