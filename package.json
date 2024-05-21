@@ -4,8 +4,8 @@
   "description": "",
   "main": "postcss.config.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./config/main.css",
-    "watch": "npx tailwindcss -i ./input.css -o ./config/main.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./res/stylesheets/main.css",
+    "watch": "npx tailwindcss -i ./input.css -o ./res/stylesheets/main.css --watch",
     "start": "vite",
     "host": "vite --host"
   },
