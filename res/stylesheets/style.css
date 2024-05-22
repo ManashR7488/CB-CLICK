@@ -1,10 +1,38 @@
+body::-webkit-scrollbar{
+    opacity: 0.5;
+    width: 8px;
+    background-color: "transparent";
+}
+body::-webkit-scrollbar-thumb{
+    box-sizing: content-box;
+    opacity: 0.5;
+    background-color: #000000;
+    border-radius: 23px;
+    cursor: grab;
+    border-right: 1px solid white;
+}
+body::-webkit-scrollbar-thumb:active{
+    cursor:grabbing;
+}
 
 
 .page1{
-    transform-origin: 50% 70%;
+    transform-origin: top;
 }
 
 #page1Img{
-    transition: all 0.7s ease;
+    transition: all 0.4s ease;
 }
 
+#page1Img:hover{
+    transform: scale(1.2);
+}
+
+.page2down .page2Img img{
+    transition: all 0.4s ease;
+}
+
+.page2down .page2Img img:hover{
+    z-index: 5;
+    transform: scale(1.2);
+}

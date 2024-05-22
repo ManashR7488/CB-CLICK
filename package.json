@@ -2,7 +2,7 @@
   "name": "07.cb-studio",
   "version": "1.0.0",
   "description": "",
-  "main": "postcss.config.js",
+  "main": "main.js",
   "scripts": {
     "build": "npx tailwindcss -i ./input.css -o ./res/stylesheets/main.css",
     "watch": "npx tailwindcss -i ./input.css -o ./res/stylesheets/main.css --watch",
