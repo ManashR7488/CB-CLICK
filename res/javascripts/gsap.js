@@ -1,9 +1,10 @@
 let tl1 = gsap.timeline();
 let tl2 = gsap.timeline();
 let loader = document.querySelector(".loader");
-loader.style.display = "flex";
+// loader.style.display = "flex";
 let loaderImg = document.querySelector(".loader img");
 let loaderText = document.querySelector(".loader h1");
+let root = document.querySelector(":root");
 tl2.pause();
 
 let cl = "";
@@ -11,6 +12,22 @@ loaderText.textContent.split("").forEach((element) => {
   cl += `<span style="display:inline-block"; id="pop">${element}</span>`;
   loaderText.innerHTML = cl;
 });
+
+window.addEventListener("DOMContentLoaded", function () {
+  
+    if (window.innerWidth > 639) {
+      Shery.mouseFollower({
+        skew: true,
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 0.3,
+      });
+      Shery.makeMagnet(".magnet", {
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 1,
+      });
+    } else {
+    }
+  });
 
 let landingPageAnimation = function () {
   loaderImg.style.display = "none";
@@ -65,25 +82,15 @@ let landingPageAnimation = function () {
     x: -100,
   });
   tl1.from(".page2", {
-    duration: 2,
+    duration: 1,
+    display: "none",
+  });
+  tl1.from(".page3", {
+    duration: 0.5,
     display: "none",
   });
 };
 
-window.addEventListener("DOMContentLoaded", function () {
-  if (window.innerWidth > 639) {
-    Shery.mouseFollower({
-      skew: true,
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 0.3,
-    });
-    Shery.makeMagnet(".magnet", {
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 1,
-    });
-  } else {
-  }
-});
 
 tl2.from("nav", {
   delay: 3,
@@ -91,7 +98,6 @@ tl2.from("nav", {
   opacity: 0,
   duration: 1.5,
   ease: "elastic.out(1,0.5)",
-  // color:"#000000",
 });
 tl2.from(".description .left div div", {
   opacity: 0,
@@ -103,7 +109,7 @@ window.addEventListener("load", function () {
   landingPageAnimation();
 });
 
-gsap.to(".page1,.page2", {
+gsap.to(".page1,.page2,.page3", {
   backgroundColor: "#fcf8e4",
   // backgroundColor:"#00ff00",
   scrollTrigger: {
@@ -115,3 +121,42 @@ gsap.to(".page1,.page2", {
   },
 });
 
+
+function showWedding(){
+  gsap.to(".wedding",{
+    display: "flex",
+  })
+  gsap.from(".wedding .box",{
+    x:100,
+    opacity:0,
+    stagger:0.1,
+  })
+  gsap.to(".event,.preWedding",{
+    display:"none"
+  })
+  setTimeout(() => {
+    locomotiveScroll.scrollTo(document.querySelector(".wedding"));
+  }, 500);
+}
+
+function showEvent(){
+  gsap.to(".event",{
+    display: "flex",
+    onStart:()=>{
+      gsap.to(".wedding,.preWedding",{
+        display:"none"
+      })
+    }
+  })
+  gsap.from(".event .box",{
+    x:100,
+    opacity:0,
+    stagger:0.1,
+  })
+  setTimeout(() => {
+    locomotiveScroll.scrollTo(document.querySelector(".event"));
+  }, 500)
+}
+
+function showPreWedding(){
+}

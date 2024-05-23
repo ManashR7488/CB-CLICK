@@ -1,34 +1,10 @@
 let profilePhoto = document.querySelector("#page1Img");
 let prevY = 0;
+let galleryImages = document.querySelectorAll(".box img");
+let secImgs = document.querySelectorAll(".page3container .secLink img");
+let overlay = document.querySelector(".overlay");
+let overlayImage = document.querySelector(".overlay img");
 
-let clutter = "";
-document
-  .querySelector(".headChild1")
-  .textContent.split("")
-  .forEach((e) => {
-    clutter += `<span class="flex text-[7vw] uppercase font-josefin font-[300]">${e}</span>`;
-    document.querySelector(".headingContainer .headChild1").innerHTML = clutter;
-  });
-let clt = "";
-document
-  .querySelector(".headChild2")
-  .textContent.split(" ")
-  .forEach((e, idx) => {
-    if (idx === 0) {
-      clt += `<div class="flex gap-[-10px ]" id="heroText">${e}</div>`;
-    } else {
-      clt += `<a href="#home" class="magnet flex gap-[-10px ]" id="heroText">${e}</a>`;
-    }
-    document.querySelector(".headingContainer .headChild2").innerHTML = clt;
-  });
-let clf = "";
-document.querySelectorAll("#heroText").forEach((element) => {
-  element.textContent.split("").forEach((e) => {
-    clf += `<span class="flex text-[7vw] uppercase font-josefin font-[300]">${e}</span>`;
-    element.innerHTML = clf;
-  });
-  clf = "";
-});
 
 window.addEventListener("scroll", function (elem) {
   if (window.scrollY > 50) {
@@ -38,14 +14,12 @@ window.addEventListener("scroll", function (elem) {
       gsap.to(".nav", {
         y: "-100%",
       });
-      // console.log("down");
     } else if (prevY > window.scrollY + 50) {
       prevY = window.scrollY;
 
       gsap.to(".nav", {
         y: "0%",
       });
-      // console.log("up");
     }
   } else {
     gsap.to(".nav", {
@@ -53,3 +27,44 @@ window.addEventListener("scroll", function (elem) {
     });
   }
 });
+
+galleryImages.forEach((image) => {
+  image.style.cursor = "pointer";
+  image.addEventListener("mouseover", () => {
+    image.style.transform = "scale(1.2)";
+  });
+  image.addEventListener("mouseout", () => {
+    image.style.transform = "scale(1)";
+  });
+  image.addEventListener("click", () => {
+    overlayImage.src = image.src;
+    overlayImage.addEventListener('load', () => {
+
+      overlay.style.display = "flex";
+    });
+  });
+});
+
+overlay.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
+
+secImgs.forEach((image) => {
+  image.addEventListener("mouseover", () => {
+    image.style.transform = "scale(1)";
+  });
+  image.addEventListener("mouseout", () => {
+    image.style.transform = "scale(1.2)";
+  });
+});
+
+
+let gLink = document.querySelector(".heroTextGl")
+  gLink.addEventListener("click", function (e) {
+    locomotiveScroll.scrollTo(document.querySelector("#gallery"));
+  })
+
+
+
+
+ 

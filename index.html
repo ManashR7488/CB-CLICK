@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body>
-    <div class="loader h-[100vh] w-[100vw] fixed z-[100] bg-white hidden justify-center items-center">
+    <div class="loader h-[100vh] w-[100vw] fixed z-[100] bg-white flex justify-center items-center">
         <img src="./images/loading.gif" alt="">
         <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
     </div>
-    <main class="main bg-[#000000]">
+    <main class="main bg-[#000000] relative">
         <nav class="nav px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between">
             <div class="logoImg magnet ml-[5%] h-[8vh]">
                 <a href="">
@@ -30,7 +30,7 @@
                 <ul class="flex h-full w-full justify-evenly items-center">
                     <li class="magnet"><a href="#home">Home</a></li>
                     <li class="magnet"><a href="#about">About</a></li>
-                    <li class="magnet"><a href="">Weddings</a></li>
+                    <li class="magnet"><a href="#wedding">Weddings</a></li>
                     <li class="magnet"><a href="">Pre Wedding</a></li>
                     <li class="magnet"><a href="">Services</a></li>
                     <li class="magnet"><a href="">Explore</a></li>
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="page2 min-h-screen bg-[#FFFEF8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
+        <div class="page2 overflow-hidden min-h-screen bg-[#FFFEF8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
             <div class="page2up w-full h-[80vh] flex justify-center gap-[2vw]">
                 <div class="page2upLeft w-3/5 h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
                     <h1 class=" uppercase text-[1.4vw] font-josefin font-[350]">professional photographer in paikmal</h1>
@@ -91,26 +91,67 @@
                         <span>Our team excels in capturing happiness and emotions with complete effectiveness, delivering high-quality pictures that speak volumes. Known for our candid wedding photography, we have earned a reputation as the leading and affordable photographers in Paikmal. We perfectly encapsulate the joy and significance of each event, ensuring that every image reflects the genuine emotions and memorable moments of your special day.</span>
                     </h1>
                 </div>
-                <div class="page2Img h-[100%] w-[30%] overflow-hidden rounded-md magnet">
+                <div class="page2upImg h-[100%] w-[30%] overflow-hidden rounded-md magnet">
                 <img class="h-[90%] object-cover w-full rounded-md"  src="https://images.unsplash.com/photo-1633104502699-b2ecf0fee294?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" alt="">
                 </div>
             </div>
             <div class="page2down mt-10 w-full h-[80%] flex justify-center items-center gap-[2vw] ">
-                <div class="page2Img h-[40vh] w-[40%] relative rounded-md">
+                <div class="page2downImg h-[40vh] w-[40%] relative rounded-md">
                    <img class=" object-cover h-[45%] absolute rounded-md left-0 top-[20%]" src="https://plus.unsplash.com/premium_photo-1670002456774-bc8f50ced929?q=80&w=1868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                    <img class=" object-cover h-[45%] absolute rounded-md right-0 top-[15%]" src="https://plus.unsplash.com/premium_photo-1682090840373-b06b5237ae74?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                    <img class=" object-cover h-[45%] absolute rounded-md left-[27.5%] top-[45%]" src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                 </div>
-                <div class="page2upLeft w-2/5 h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
+                <div class="page2downLeft w-[50%] h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
                     <h1 class=" uppercase text-[1.4vw] font-josefin font-[350]">BIOGRAPHY</h1>
-                    <h1 class="flex flex-col gap-5 w-full font-jost ">
+                    <h1 class="flex flex-col gap-5 w-full font-jost text-center">
                         <span>As seasoned event photographers in area of paikmal, photography is a Heart-To-Heart passion for us, encapsulating precise moments of joy into your memory vaults, an experience that awakens your senses and brings immense pleasure. </span>
                         <span>Our artistry lies in crafting photographs that capture the fleeting essence of freshness; a charm that, once missed, cannot be replicated like the first encounter. Each photograph is a genuine treasure trove, immortalizing the precious bonds within every relationship.</span>
                     </h1>
                 </div>
             </div>
         </div>
+        <div class="page3 relative bg-[#FFFEF8] w-full min-h-[6vh] pt-[7vh] flex flex-col items-center gap-3">
+            <div class="overlay fixed top-0 h-[100%] w-[100%] bg-[#000000d8] z-[100] hidden justify-center items-center">
+                <img class=" h-[90%] object-cover rounded-sm" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
+            </div>
+            <h1 id="gallery" class="uppercase text-center font-josefin text-[4vw] font-[300]">Gallery</h1>
+            <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh]">
+                <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
+                    <img class="w-full h-full object-cover scale-[1.2]" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
+                    <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">event</h1>
+                </div>
+                <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showWedding()">
+                    <img class="w-full h-full object-cover scale-[1.2]" src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" alt="">
+                    <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800] ">wedding</h1>
+                </div>
+                <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showPreWedding()">
+                    <img class="w-full h-full object-cover scale-[1.2]" src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" alt="">
+                    <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">pre-wedding</h1>
+                </div>
+            </div>
+            <div class="event overflow-hidden h-fit hidden w-full flex-col items-center">
+                <h1 class="text-center py-[3vw] uppercase">event</h1>
+                <section class="secBox w-full h-fit flex flex-col items-center ">
+                    <div id="eventContainer" class="Event eventContainer h-fit w-[95%]">
+                    </div>
+                </section>
+            </div>
+            <div id="wedding" class="wedding overflow-hidden h-fit hidden w-full flex-col items-center">
+                <h1 class="text-center py-[3vw] uppercase">wedding</h1>
+                <section class="secBox w-full h-fit flex flex-col items-center ">
+                    <div id="weddingContainer" class="Wedding weddingContainer h-fit w-[95%]">
+                    </div>
+                </section>
+            </div>
+            <div class="pre-wedding hidden h-fit w-full">
+
+            </div>
+        </div>
     </main>
+
+
+
+    <script src="./res/javascripts/createLink.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

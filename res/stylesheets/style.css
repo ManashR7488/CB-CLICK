@@ -1,17 +1,17 @@
-body::-webkit-scrollbar{
-    opacity: 0.5;
-    width: 8px;
-    background-color: "transparent";
+:root{
+    --clrBg:#FFFEF8;
 }
-body::-webkit-scrollbar-thumb{
-    box-sizing: content-box;
-    opacity: 0.5;
-    background-color: #000000;
-    border-radius: 23px;
+
+::-webkit-scrollbar{
+    width: 0.5vw;
+}
+::-webkit-scrollbar-thumb{
+    background: #000000;
+    border-radius: 10px;
     cursor: grab;
-    border-right: 1px solid white;
+    
 }
-body::-webkit-scrollbar-thumb:active{
+::-webkit-scrollbar-thumb:active{
     cursor:grabbing;
 }
 
@@ -28,11 +28,48 @@ body::-webkit-scrollbar-thumb:active{
     transform: scale(1.2);
 }
 
-.page2down .page2Img img{
+.page2{
+    transform-origin: top;
+}
+
+.page2down .page2downImg img{
     transition: all 0.4s ease;
 }
 
-.page2down .page2Img img:hover{
+.page2down .page2downImg img:hover{
     z-index: 5;
     transform: scale(1.2);
 }
+
+
+.weddingContainer,.eventContainer{
+    columns: 5;
+    column-gap: 1.5vw;
+    margin: 0px auto;
+}
+
+.box{
+    width: 100%;
+    margin-top: 3vh;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.box img{
+    border-radius: 15px;
+    max-width: 100%;
+    transition: all 0.3s ease;
+}
+
+
+.page3container .secLink img{
+    transition: all 0.6s ease;
+}
+
+
+
+.secLink:hover h1{
+    transform: scale(1.2);
+    opacity: 1;
+}
+
