@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar{
-    width: 0.5vw;
+    width: 0.45vw;
 }
 ::-webkit-scrollbar-thumb{
     background: #000000;
@@ -15,16 +15,18 @@
     cursor:grabbing;
 }
 
-
+.noscroll {
+    overflow: hidden;
+}
 .page1{
     transform-origin: top;
 }
 
-#page1Img{
+#profileImg{
     transition: all 0.4s ease;
 }
 
-#page1Img:hover{
+#profileImg:hover{
     transform: scale(1.2);
 }
 
@@ -73,3 +75,6 @@
     opacity: 1;
 }
 
+.overlay{
+    backdrop-filter: blur(8px);
+}

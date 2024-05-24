@@ -3,10 +3,10 @@
 //   })();
 
 const locomotiveScroll = new LocomotiveScroll({
-  smooth:true,
+  autoStart: false,
 });
 
-
+locomotiveScroll.start();
   let links = document.querySelectorAll('.navLinkContainer ul li a')
 
   links.forEach((link,idx) => {
@@ -44,4 +44,4 @@ const locomotiveScroll = new LocomotiveScroll({
   })
 
   
-  
+  // locomotiveScroll.stop();

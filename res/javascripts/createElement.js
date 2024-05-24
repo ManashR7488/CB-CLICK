@@ -48,13 +48,14 @@ const weddingImgLinks = [
     ,"https://images.unsplash.com/photo-1606150326253-10510204bc62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM2fHxpbmRpYW4lMjB3ZWRkaW5nfGVufDB8fDB8fHww"
     ,"https://plus.unsplash.com/premium_photo-1682096113699-cce9093dcc73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMGJyaWRlfGVufDB8fDB8fHww"
     ,"https://images.unsplash.com/photo-1610276347233-2ab70fc71da8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMGJyaWRlfGVufDB8fDB8fHww"
-    ,"https://images.unsplash.com/photo-1593489062665-9f26fa627d73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8M3w1NDgzNjg1NHx8ZW58MHx8fHx8"
+    ,"https://www.jansatta.com/wp-content/uploads/2024/02/Village-Famous-For-Love-Marriage-9.jpg"
+    ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3J5J-mzRovS86qBRZBeFz5m6rfZZ0wzW0Awf6GcJEsQ&s"
 
 ];
 
-
 let eventContainer = document.querySelector('#eventContainer');
 let weddingContainer = document.querySelector('#weddingContainer');
+
 
 let elem = '';
 
@@ -68,7 +69,7 @@ eventImgLinks.forEach((link)=>{
 elem = '';
 
 weddingImgLinks.forEach((link)=>{
-    elem += `<div class="box">
+    elem += `<div class="box magnet">
     <img src="${link}"></img>
     </div>`;
     weddingContainer.innerHTML = elem;
