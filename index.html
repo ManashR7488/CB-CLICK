@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./images/favIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link href='https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -19,14 +20,25 @@
         <img src="./images/loading.gif" alt="">
         <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
     </div>
+    <div class="overlay overflow-hidden hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[100] justify-between items-center">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-next text-white magnet"></div>
+          <div class="swiper-button-prev text-white magnet"></div>
+          <div class="swiper-pagination text-white"></div>
+        </div>
+        <button class="overlayCloseBtn magnet rounded-2xl absolute z-[102] bg-[#ff000011] h-[50px] w-[50px] top-5 right-5 text-[2vw] text-white" onclick="closeOverlay()">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
     <main class="main bg-[#000000] relative">
-        <nav class="nav px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between">
-            <div class="logoImg magnet ml-[5%] h-[8vh]">
+        <nav class="nav px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
+            <div class="logoImg magnet ml-[5%] h-[8vh] sm:h-[80%]">
                 <a href="">
                     <img src="./images/logoImg.png" alt="" class=" object-cover h-full">
                 </a>
             </div>
-            <div class="navLinkContainer h-[60%] text-sm font-jost font-light   bg-[#252525] w-[40%] rounded-[30px] text-white uppercase">
+            <div class="navLinkContainer h-[60%] text-sm font-jost font-light   bg-[#252525] w-[40%] rounded-[30px] text-white uppercase sm:hidden">
                 <ul class="flex h-full w-full justify-evenly items-center">
                     <li class="magnet"><a href="#home">Home</a></li>
                     <li class="magnet"><a href="#about">About</a></li>
@@ -36,18 +48,19 @@
                     <li class="magnet"><a href="">Explore</a></li>
                 </ul>
             </div>
+            <button class="navmenu hidden sm:block bg-black h-fit w-fit px-[2vw] text-white rounded-2xl">Menu</button>
         </nav>
-        <div class="page1 bg-[#FFFEF8] h-screen w-full px-[5vw] pt-[9vh]" id="home">
-            <div class="headingContainer pl-[5vw] pt-[4vw] leading-[18vh] w-full h-[52%] text-[7vw] uppercase font-josefin font-[300]">
+        <div class="page1 bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
+            <div class="headingContainer pl-[5vw] sm:pl-[0] pt-[4vw] sm:pt-[5vw] leading-[18vh] sm:leading-[10vh] w-full h-[52%] sm:h-[30%] text-[7vw] uppercase font-josefin font-[300]">
                 <h1 class="headChild1 flex gap-0 overflow-hidden">chandan</h1>
                 <h1 class="headChild2 flex gap-[3vw] overflow-hidden">photo gallery</h1>
             </div>
-            <div id="read" class="description w-full h-[45%] flex justify-center items-center">
-                <div class="left h-full w-1/2 flex justify-start items-start gap-[4vw] pl-[5vw] pt-[2vw] leading-5 uppercase text-[0.8vw] font-inter">
+            <div id="read" class="description w-full h-[45%] sm:h-fit flex justify-center items-center sm:items-start sm:flex-col-reverse sm:gap-[8vw]">
+                <div class="left h-full w-1/2 sm:w-full sm-h-fit flex justify-start items-start gap-[4vw] sm:gap-[10vw] pl-[5vw] pt-[2vw] leading-5 uppercase text-[0.8vw] sm:text-[2.4vw] font-inter">
                     <div class="flex flex-col gap-[2vw] overflow-hidden">
                         <div>
                             <h4 class=" font-extralight">About</h4>
-                            <h4 class="magnet font-[400] pl-2 cursor-pointer"><a href="#read" id="rLink">read more</a></h4>
+                            <h4 class="magnet font-[400] pl-2 cursor-pointer"><a href="#about" id="rLink">read more</a></h4>
                         </div>
                         <div>
                             <h4 class=" font-extralight">Contact</h4>
@@ -66,9 +79,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="right h-full w-1/2 ">
-                    <div class=" up h-[50%] w-fit px-[2.5vw]" id="page1Img">
-                        <img id="profileImg" class="object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <div class="right h-full w-1/2 sm:w-full">
+                    <div class="up h-[50%] w-fit sm:w-1/2 px-[2.5vw] overflow-hidden" id="page1Img">
+                        <img id="jgt9" class="dpImg object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                     </div>
                     <div class="down h-fit py-3.5 w-full flex justify-between  items-start px-[1vw] text-sm">
                         <div class="left h-full w-[50%] px-[1.5vw] ">
@@ -81,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="page2 overflow-hidden min-h-screen bg-[#FFFEF8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
+        <div class="page2 h-screen w-full bg-[#e8dea8] px-[7vw] pt-[6vw] pb-[3vw] " id="about">
             <div class="page2up w-full h-[80vh] flex justify-center gap-[2vw]">
                 <div class="page2upLeft w-3/5 h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
                     <h1 class=" uppercase text-[1.4vw] font-josefin font-[350]">professional photographer in paikmal</h1>
@@ -111,14 +124,6 @@
             </div>
         </div>
         <div class="page3 relative bg-[#FFFEF8] w-full h-fit pt-[7vh] flex flex-col items-center gap-3">
-            <div class="overlay overflow-hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[100] hidden justify-between  items-center">
-                <div class="close cursor-pointer absolute top-5 right-5 h-[8vh] w-[8vh] bg-[#00000019] flex justify-center items-center text-2xl rounded-[50%] magnet text-white "><i class="ri-close-line"></i></div>
-                <div class="left bg-[#00000019] rounded-[23px] cursor-pointer text-[3vw] text-white w-[5%] h-[20%] flex justify-center items-center"><i class="ri-arrow-left-wide-line magnet"></i></div>
-                <div class="overImg overflow-hidden rounded-lg h-[90%] max-w-[80%] flex justify-center items-center">
-                    <img class="h-[100%] max-w-[100%] cursor-pointer object-cover rounded-lg z-[110]" src="https://t4.ftcdn.net/jpg/04/77/34/43/360_F_477344321_gjYepHmQ7OoZLSmAwCO9neC8ozhtZ3sa.jpg" alt="">
-                </div>
-                <div class="right bg-[#00000019] rounded-[23px] cursor-pointer text-[3vw] text-white w-[5%] h-[20%] flex justify-center items-center"><i class="ri-arrow-right-wide-line magnet"></i></div>
-            </div>
             <h1 id="gallery" class="text-center font-heading  text-[4vw] font-[300]">Gallery</h1>
             <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh]">
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
@@ -140,7 +145,7 @@
                     <div id="eventContainer" class="Event eventContainer h-fit w-[95%]">
                     </div>
                 </section>
-                <div class="hideBtn bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
+                <div class="hideBtn magnet bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
                     <button class="h-full w-full" onclick="hideSection(1)">HIDE</button>
                 </div>
             </div>
@@ -150,7 +155,7 @@
                     <div id="weddingContainer" class="Wedding weddingContainer h-fit w-[95%]">
                     </div>
                 </section>
-                <div class="hideBtn bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
+                <div class="hideBtn magnet bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
                     <button class="h-full w-full" onclick="hideSection(2)">HIDE</button>
                 </div>
             </div>
@@ -164,6 +169,7 @@
 
 
     <script src="./res/javascripts/createElement.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -171,7 +177,7 @@
     <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
     <script type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
     <script src="./res/javascripts/loco.js"></script>
-    <script src="./res/javascripts/gsap.js"></script>
+    <!-- <script src="./res/javascripts/gsap.js"></script> -->
     <script src="./res/javascripts/index.js"></script>
 </body>
 </html>

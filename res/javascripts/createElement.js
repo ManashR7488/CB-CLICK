@@ -49,7 +49,6 @@ const weddingImgLinks = [
     ,"https://plus.unsplash.com/premium_photo-1682096113699-cce9093dcc73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMGJyaWRlfGVufDB8fDB8fHww"
     ,"https://images.unsplash.com/photo-1610276347233-2ab70fc71da8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMGJyaWRlfGVufDB8fDB8fHww"
     ,"https://www.jansatta.com/wp-content/uploads/2024/02/Village-Famous-For-Love-Marriage-9.jpg"
-    ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3J5J-mzRovS86qBRZBeFz5m6rfZZ0wzW0Awf6GcJEsQ&s"
 
 ];
 
@@ -89,7 +88,7 @@ document
   .querySelector(".headChild1")
   .textContent.split("")
   .forEach((e) => {
-    clutter += `<span class="flex text-[7vw] uppercase font-josefin font-[300]">${e}</span>`;
+    clutter += `<span class="flex text-[7vw] uppercase font-josefin font-[300] sm:text-[10vw]">${e}</span>`;
     document.querySelector(".headingContainer .headChild1").innerHTML = clutter;
   });
 let clt = "";
@@ -107,7 +106,7 @@ document
 let clf = "";
 document.querySelectorAll("#heroText").forEach((element) => {
   element.textContent.split("").forEach((e) => {
-    clf += `<span class="flex text-[7vw] uppercase font-josefin font-[300]">${e}</span>`;
+    clf += `<span class="flex text-[7vw] uppercase font-josefin font-[300] sm:text-[10vw]">${e}</span>`;
     element.innerHTML = clf;
   });
   clf = "";
