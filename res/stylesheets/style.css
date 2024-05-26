@@ -1,98 +1,144 @@
-:root{
-    --clrBg:#FFFEF8;
+:root {
+    --clrBg: #FFFEF8;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0.45vw;
+
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: #000000;
     border-radius: 10px;
     cursor: grab;
-    
+
 }
-::-webkit-scrollbar-thumb:active{
-    cursor:grabbing;
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
 }
 
 .noscroll {
     overflow: hidden;
 }
-.page1{
+
+@media (max-width: 639px) {
+    nav {
+        backdrop-filter: blur(5px);
+    }
+}
+
+.page1 {
     transform-origin: top;
 }
 
-#jgt9{
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: all 0.4s ease;
-}
 
-#jgt9:hover{
-    transform: scale(1.2);
-}
-
-.page2{
+.page2 {
     transform-origin: top;
 }
 
-.page2down .page2downImg img{
+.page2down .page2downImg img {
     transition: all 0.4s ease;
 }
 
-.page2down .page2downImg img:hover{
+.page2down .page2downImg img:hover {
     z-index: 5;
     transform: scale(1.2);
 }
 
 
-.weddingContainer,.eventContainer{
+.weddingContainer,
+.eventContainer {
     columns: 5;
     column-gap: 1.5vw;
     margin: 0px auto;
 }
 
-.box{
+.box {
     width: 100%;
-    margin-top: 3vh;
+    margin-bottom: 3vh;
     overflow: hidden;
     border-radius: 15px;
 }
 
-.box img{
+.box img {
     border-radius: 15px;
     max-width: 100%;
     transition: all 0.3s ease;
 }
 
 
-.page3container .secLink img{
+.page3container .secLink img {
     transition: all 0.6s ease;
 }
 
 
 
-.secLink:hover h1{
+.secLink:hover h1 {
     transform: scale(1.2);
     opacity: 1;
 }
 
-.swiper {
+.overlay .swiper {
     width: 90%;
-    height: 100%;
-  }
+    height: 100%
+}
 
-  .swiper-slide {
+.overlay .swiper-slide {
     overflow: hidden;
-  }
+}
 
-  .swiper-slide img {
+.overlay .swiper-slide img {
     display: block;
     height: 90%;
     object-fit: cover;
     overflow: hidden;
-  }
+}
 
-  .overlay{
+.overlay {
     backdrop-filter: blur(15px);
-  }
+}
+
+.swiperContainer .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiperContainer .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: fit-content;
+}
+
+.swiperContainer .swiper-slide img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+@media (max-width:639px) {
+
+    .weddingContainer,
+    .eventContainer {
+        columns: 3;
+        column-gap: 1.5vw;
+        margin: 0px auto;
+    }
+
+    .overlay .swiper-slide img {
+        height: auto;
+        width: 90%;
+    }
+
+    .overlay .swiper {
+        width: 100%;
+        height: 90%;
+    }
+    .box{
+        margin-bottom: 1vh;
+    }
+}

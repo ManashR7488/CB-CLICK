@@ -84,11 +84,8 @@ elem = '';
 
 
 let clutter = "";
-document
-  .querySelector(".headChild1")
-  .textContent.split("")
-  .forEach((e) => {
-    clutter += `<span class="flex text-[7vw] uppercase font-josefin font-[300] sm:text-[10vw]">${e}</span>`;
+document.querySelector(".headChild1").textContent.split("").forEach((e) => {
+    clutter += `<span class="flex uppercase font-josefin font-[300]">${e}</span>`;
     document.querySelector(".headingContainer .headChild1").innerHTML = clutter;
   });
 let clt = "";
@@ -97,16 +94,16 @@ document
   .textContent.split(" ")
   .forEach((e, idx) => {
     if (idx === 0) {
-      clt += `<div class="flex gap-[-10px ]" id="heroText">${e}</div>`;
+      clt += `<div class="heroText flex gap-[1vw]">${e}</div>`;
     } else {
-      clt += `<div class="heroTextGl magnet flex gap-[-10px ] cursor-pointer" id="heroText">${e}</div>`;
+      clt += `<div class="heroText heroTextGl magnet flex gap-[1vw] cursor-pointer">${e}</div>`;
     }
     document.querySelector(".headingContainer .headChild2").innerHTML = clt;
   });
 let clf = "";
-document.querySelectorAll("#heroText").forEach((element) => {
+document.querySelectorAll(".heroText").forEach((element) => {
   element.textContent.split("").forEach((e) => {
-    clf += `<span class="flex text-[7vw] uppercase font-josefin font-[300] sm:text-[10vw]">${e}</span>`;
+    clf += `<span class="flex uppercase font-josefin font-[300]">${e}</span>`;
     element.innerHTML = clf;
   });
   clf = "";

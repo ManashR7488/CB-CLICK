@@ -21,8 +21,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("load", function () {
-  landingPageAnimation();
+window.addEventListener("load",async function () {
+ await landingPageAnimation();
 });
 
 window.addEventListener("scroll", function (elem) {
@@ -66,7 +66,7 @@ galleryImages.forEach((image) => {
     } else if (currentSection === 3) {
 
     }
-    const swiper = new Swiper(".mySwiper", {
+    const swiper3 = new Swiper(".mySwiper", {
       keyboard: {
         enabled: true,
       },
@@ -126,3 +126,20 @@ function hideSection(sec){
     locomotiveScroll.scrollTo(document.querySelector("#gallery"));
   }, time);
 }
+
+
+let links = document.querySelectorAll('.navLinkContainer ul li a')
+
+links.forEach((link,idx) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
+    const id = e.target.getAttribute('href').slice(1)
+    const element = document.getElementById(id)
+    if(idx === 2){
+      showWedding();
+    }else{
+      locomotiveScroll.scrollTo(element)
+    }
+    
+  })
+})

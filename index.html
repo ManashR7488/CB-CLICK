@@ -16,23 +16,23 @@
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body >
-    <div class="loader hidden h-[100vh] w-[100vw] fixed z-[100] bg-white justify-center items-center">
+    <div class="loader flex h-[100vh] w-[100vw] fixed z-[100] bg-white justify-center items-center">
         <img src="./images/loading.gif" alt="">
         <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
     </div>
-    <div class="overlay overflow-hidden hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[100] justify-between items-center">
-        <div class="swiper mySwiper">
+    <div class="overlay overflow-hidden hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[100] justify-center items-start">
+        <div class="swiper mySwiper flex">
           <div class="swiper-wrapper"></div>
-          <div class="swiper-button-next text-white magnet"></div>
-          <div class="swiper-button-prev text-white magnet"></div>
+          <div class="swiper-button-next text-white magnet sm:hidden"></div>
+          <div class="swiper-button-prev text-white magnet sm:hidden"></div>
           <div class="swiper-pagination text-white"></div>
         </div>
-        <button class="overlayCloseBtn magnet rounded-2xl absolute z-[102] bg-[#ff000011] h-[50px] w-[50px] top-5 right-5 text-[2vw] text-white" onclick="closeOverlay()">
+        <button class="overlayCloseBtn magnet rounded-[50%] absolute z-[102] bg-[#0000001a] h-[50px] w-[50px] top-5 right-5 text-[2vw] sm:text-[6vw] text-white" onclick="closeOverlay()">
           <i class="ri-close-line"></i>
         </button>
       </div>
     <main class="main bg-[#000000] relative">
-        <nav class="nav px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
+        <nav class="nav sm:bg-[#fffef888] px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
             <div class="logoImg magnet ml-[5%] h-[8vh] sm:h-[80%]">
                 <a href="">
                     <img src="./images/logoImg.png" alt="" class=" object-cover h-full">
@@ -51,9 +51,9 @@
             <button class="navmenu hidden sm:block bg-black h-fit w-fit px-[2vw] text-white rounded-2xl">Menu</button>
         </nav>
         <div class="page1 bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
-            <div class="headingContainer pl-[5vw] sm:pl-[0] pt-[4vw] sm:pt-[5vw] leading-[18vh] sm:leading-[10vh] w-full h-[52%] sm:h-[30%] text-[7vw] uppercase font-josefin font-[300]">
-                <h1 class="headChild1 flex gap-0 overflow-hidden">chandan</h1>
-                <h1 class="headChild2 flex gap-[3vw] overflow-hidden">photo gallery</h1>
+            <div class="headingContainer pl-[5vw] sm:pl-[0] pt-[4vw] sm:pt-[5vw] leading-[18vh] sm:leading-[10vh] w-full h-[52%] sm:h-[25vh] uppercase font-josefin font-[300]">
+                <h1 class="headChild1 flex gap-0 overflow-hidden text-[7vw] sm:text-[10vw]">chandan</h1>
+                <h1 class="headChild2 flex gap-[4vw] overflow-hidden text-[7vw] sm:text-[10vw] sm:pointer-events-none">photo gallery</h1>
             </div>
             <div id="read" class="description w-full h-[45%] sm:h-fit flex justify-center items-center sm:items-start sm:flex-col-reverse sm:gap-[8vw]">
                 <div class="left h-full w-1/2 sm:w-full sm-h-fit flex justify-start items-start gap-[4vw] sm:gap-[10vw] pl-[5vw] pt-[2vw] leading-5 uppercase text-[0.8vw] sm:text-[2.4vw] font-inter">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="right h-full w-1/2 sm:w-full">
-                    <div class="up h-[50%] w-fit sm:w-1/2 px-[2.5vw] overflow-hidden" id="page1Img">
+                    <div class="up h-[50%] w-fit sm:w-1/2 px-[2.5vw]" id="page1Img">
                         <img id="jgt9" class="dpImg object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                     </div>
                     <div class="down h-fit py-3.5 w-full flex justify-between  items-start px-[1vw] text-sm">
@@ -94,28 +94,28 @@
                 </div>
             </div>
         </div>
-        <div class="page2 h-screen w-full bg-[#e8dea8] px-[7vw] pt-[6vw] pb-[3vw] " id="about">
-            <div class="page2up w-full h-[80vh] flex justify-center gap-[2vw]">
-                <div class="page2upLeft w-3/5 h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
-                    <h1 class=" uppercase text-[1.4vw] font-josefin font-[350]">professional photographer in paikmal</h1>
-                    <h1 class="flex flex-col gap-5 w-full font-jost ">
+        <div class="page2 min-h-screen w-full bg-[#fffef8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
+            <div class="page2up w-full h-[80vh] sm:h-fit flex justify-center gap-[2vw] sm:overflow-hidden sm:flex-col-reverse">
+                <div class="page2upLeft w-3/5 sm:w-full h-full py-[2vw] sm:py-[10vw] flex flex-col gap-[2vw] sm:gap-[6vw] items-center justify-center">
+                    <h1 class=" uppercase text-[1.4vw] sm:text-[3.1vw] sm:font-[700] font-josefin font-[350]">professional photographer in paikmal</h1>
+                    <h1 class="flex flex-col gap-5 w-full font-jost text-center">
                         <span>At CS Studio, we pride ourselves on being the premier photographers in paikmal Bargarh, specializing in capturing the essence of all types of events. Whether it's a wedding, pre-wedding shoot, destination wedding shoot, birthday party, reception, baby shower, engagement, or school events, we are dedicated to making every moment unforgettable.</span>
                         <span>"Capture Every Precious Moment with Heart and Inspiration, as These Timeless Memories Deserve to be Preserved with Soul and Passion."</span>
                         <span>Our team excels in capturing happiness and emotions with complete effectiveness, delivering high-quality pictures that speak volumes. Known for our candid wedding photography, we have earned a reputation as the leading and affordable photographers in Paikmal. We perfectly encapsulate the joy and significance of each event, ensuring that every image reflects the genuine emotions and memorable moments of your special day.</span>
                     </h1>
                 </div>
-                <div class="page2upImg h-[100%] w-[30%] overflow-hidden rounded-md magnet">
+                <div class="page2upImg h-[100%] w-[30%] sm:w-[50%] sm:h-[50%] overflow-hidden rounded-md magnet">
                 <img class="h-[90%] object-cover w-full rounded-md"  src="https://images.unsplash.com/photo-1633104502699-b2ecf0fee294?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" alt="">
                 </div>
             </div>
-            <div class="page2down mt-10 w-full h-[80%] flex justify-center items-center gap-[2vw] ">
-                <div class="page2downImg h-[40vh] w-[40%] relative rounded-md">
-                   <img class=" object-cover h-[45%] absolute rounded-md left-0 top-[20%]" src="https://plus.unsplash.com/premium_photo-1670002456774-bc8f50ced929?q=80&w=1868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                   <img class=" object-cover h-[45%] absolute rounded-md right-0 top-[15%]" src="https://plus.unsplash.com/premium_photo-1682090840373-b06b5237ae74?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                   <img id="gugufiy" class=" object-cover h-[45%] absolute rounded-md left-[27.5%] top-[45%]" src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <div class="page2down mt-10 sm:mt-2 w-full h-[80%] flex justify-center items-center gap-[2vw] sm:block">
+                <div class="page2downImg h-[40vh] sm:h-[30vh] w-[40%] sm:w-full relative rounded-md flex items-center justify-center">
+                   <img class=" object-cover h-[45%] absolute rounded-md left-0 top-[20%] sm:top-0" src="https://plus.unsplash.com/premium_photo-1670002456774-bc8f50ced929?q=80&w=1868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                   <img class=" object-cover h-[45%] absolute rounded-md right-0 top-[15%] sm:top-auto sm:right-auto" src="https://plus.unsplash.com/premium_photo-1682090840373-b06b5237ae74?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                   <img class=" object-cover h-[45%] absolute rounded-md left-[27.5%] top-[45%] sm:top-auto sm:bottom-0 sm:left-auto right-0"  id="gugufiy" src="https://images.unsplash.com/photo-1542042161784-26ab9e041e89?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                 </div>
-                <div class="page2downLeft w-[50%] h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
-                    <h1 class=" uppercase text-[1.4vw] font-josefin font-[350]">BIOGRAPHY</h1>
+                <div class="page2downLeft sm:mt-[5vw] w-[50%] sm:w-full h-full py-[2vw] flex flex-col gap-[2vw] items-center justify-center">
+                    <h1 class=" uppercase text-[1.4vw] font-josefin font-[350] sm:text-[3.1vw] sm:font-[700]">BIOGRAPHY</h1>
                     <h1 class="flex flex-col gap-5 w-full font-jost text-center">
                         <span>As seasoned event photographers in area of paikmal, photography is a Heart-To-Heart passion for us, encapsulating precise moments of joy into your memory vaults, an experience that awakens your senses and brings immense pleasure. </span>
                         <span>Our artistry lies in crafting photographs that capture the fleeting essence of freshness; a charm that, once missed, cannot be replicated like the first encounter. Each photograph is a genuine treasure trove, immortalizing the precious bonds within every relationship.</span>
@@ -123,9 +123,9 @@
                 </div>
             </div>
         </div>
-        <div class="page3 relative bg-[#FFFEF8] w-full h-fit pt-[7vh] flex flex-col items-center gap-3">
-            <h1 id="gallery" class="text-center font-heading  text-[4vw] font-[300]">Gallery</h1>
-            <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh]">
+        <div class="page3 overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] sm:pt-[4vh] flex flex-col items-center gap-3">
+            <h1 id="gallery" class="text-center font-heading  text-[4vw] sm:text-[7vw] font-[300]">Gallery</h1>
+            <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh] sm:hidden">
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
                     <img class="w-full h-full object-cover scale-[1.2]" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
                     <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">event</h1>
@@ -137,6 +137,50 @@
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showPreWedding()">
                     <img class="w-full h-full object-cover scale-[1.2]" src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" alt="">
                     <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">pre-wedding</h1>
+                </div>
+            </div>
+            <div class="mobile hidden h-fit w-full sm:flex justify-center items-center gap-[5vw]">
+                <div class="swiperContainer h-[30vh] ">
+                    <div class="swiper mySwiperD flex items-center justify-center">
+                        <div class="swiper-wrapper font-josefin uppercase font-[200] text-[3vw]">
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                            <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
+                            <h1>click to view</h1>
+                          </div>
+                        </div> 
+                      </div>
                 </div>
             </div>
             <div class="event overflow-hidden h-fit hidden w-full flex-col items-center gap-[3vw]">
@@ -163,11 +207,13 @@
 
             </div>
         </div>
-        <div class="page4 h-[100vh] w-full bg-[#fffef8]"></div>
+        <div class="page4 h-[100vh] w-full bg-[#fffef8] ">
+            hbiergbferjkb
+        </div>
     </main>
 
 
-
+    
     <script src="./res/javascripts/createElement.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
@@ -177,7 +223,8 @@
     <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
     <script type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
     <script src="./res/javascripts/loco.js"></script>
-    <!-- <script src="./res/javascripts/gsap.js"></script> -->
+    <script src="./res/javascripts/gsap.js"></script>
+    <script src="./res/javascripts/swiper.js"></script>
     <script src="./res/javascripts/index.js"></script>
 </body>
 </html>
