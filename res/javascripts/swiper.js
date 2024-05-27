@@ -10,10 +10,8 @@ const swiper1 = new Swiper(".mySwiperD", {
     modifier: 1,
   },
   autoplay: {
-    delay: 3500,
+    delay: 3000,
     disableOnInteraction: false,
   },
   loop: true,
 });
-
-console.log("done")

@@ -48,8 +48,9 @@
 
 
 .weddingContainer,
-.eventContainer {
-    columns: 5;
+.eventContainer,
+.preWeddingContainer {
+    columns: 6;
     column-gap: 1.5vw;
     margin: 0px auto;
 }
@@ -118,12 +119,18 @@
     border-radius: 10px;
 }
 
-
+/* .navmenu{
+    transition: all 0.5s;
+} */
+.menu{
+    backdrop-filter: blur(9px);
+}
 
 @media (max-width:639px) {
 
     .weddingContainer,
-    .eventContainer {
+    .eventContainer,
+    .preWeddingContainer {
         columns: 3;
         column-gap: 1.5vw;
         margin: 0px auto;

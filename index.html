@@ -16,24 +16,25 @@
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body >
-    <div class="loader flex h-[100vh] w-[100vw] fixed z-[100] bg-white justify-center items-center">
+    <div class="loader flex h-[100vh] w-[100vw] fixed z-[999] bg-white justify-center items-center">
         <img src="./images/loading.gif" alt="">
         <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
     </div>
-    <div class="overlay overflow-hidden hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[100] justify-center items-start">
+    <div class="overlay overflow-hidden hidden fixed top-0 left-0 h-[100vh] w-[100vw] bg-[#00000080] z-[800] justify-center items-start">
         <div class="swiper mySwiper flex">
           <div class="swiper-wrapper"></div>
           <div class="swiper-button-next text-white magnet sm:hidden"></div>
           <div class="swiper-button-prev text-white magnet sm:hidden"></div>
           <div class="swiper-pagination text-white"></div>
         </div>
-        <button class="overlayCloseBtn magnet rounded-[50%] absolute z-[102] bg-[#0000001a] h-[50px] w-[50px] top-5 right-5 text-[2vw] sm:text-[6vw] text-white" onclick="closeOverlay()">
+        <button class="overlayCloseBtn magnet rounded-[50%] absolute z-[810] bg-[#0000001a] h-[50px] w-[50px] top-5 right-5 text-[2vw] sm:text-[6vw] text-white" onclick="closeOverlay()">
           <i class="ri-close-line"></i>
         </button>
-      </div>
+    </div>
+    
     <main class="main bg-[#000000] relative">
-        <nav class="nav sm:bg-[#fffef888] px-5 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
-            <div class="logoImg magnet ml-[5%] h-[8vh] sm:h-[80%]">
+        <nav class="nav sm:bg-[#fffef888] px-5 sm:px-0 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
+            <div class="logoImg magnet sm:px-5 ml-[5%] h-[8vh] sm:h-[80%]">
                 <a href="">
                     <img src="./images/logoImg.png" alt="" class=" object-cover h-full">
                 </a>
@@ -48,7 +49,20 @@
                     <li class="magnet"><a href="">Explore</a></li>
                 </ul>
             </div>
-            <button class="navmenu hidden sm:block bg-black h-fit w-fit px-[2vw] text-white rounded-2xl">Menu</button>
+            <button class="navmenu hidden sm:block fixed bg-black h-fit w-fit px-[2vw] py-1 right-[6vw] z-[200] text-white rounded-2xl">Menu</button>   
+            <div class="menu hidden sm:flx bg-[#000000f1] text-white fixed top-0 h-[50vh] w-screen z-[120]">
+                <div class="menuLeft w-1/2 h-full flex items-center ">
+                    <ul class="flex flex-col h-[70%] w-full justify-evenly uppercase items-start px-10 text-[4vw] ">
+                        <li class="magnet"><a href="#home">Home</a></li>
+                        <li class="magnet"><a href="#about">About</a></li>
+                        <li class="magnet"><a href="#wedding">Weddings</a></li>
+                        <li class="magnet"><a href="">Pre Wedding</a></li>
+                        <li class="magnet"><a href="">Services</a></li>
+                        <li class="magnet"><a href="">Explore</a></li>
+                    </ul>
+                </div>
+                <div class="menuRight w-1/2 h-full bg-red-400"></div>
+            </div>
         </nav>
         <div class="page1 bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
             <div class="headingContainer pl-[5vw] sm:pl-[0] pt-[4vw] sm:pt-[5vw] leading-[18vh] sm:leading-[10vh] w-full h-[52%] sm:h-[25vh] uppercase font-josefin font-[300]">
@@ -81,9 +95,9 @@
                 </div>
                 <div class="right h-full w-1/2 sm:w-full">
                     <div class="up h-[50%] w-fit sm:w-1/2 px-[2.5vw]" id="page1Img">
-                        <img id="jgt9" class="dpImg object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img id="jgt9" class="dpImg sm:pointer-events-none object-cover h-full rounded-[5px]" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
                     </div>
-                    <div class="down h-fit py-3.5 w-full flex justify-between  items-start px-[1vw] text-sm">
+                    <div class="down sm:mt-5 h-fit py-3.5 w-full flex justify-between  items-start px-[1vw] text-sm">
                         <div class="left h-full w-[50%] px-[1.5vw] ">
                             <h1>Hi, I'm Chandan — a modern photo and videographer from paikmal bargarh. My interests lie in exploring innovative idea on photography, uncovering new ways to connect with peoples.</h1>
                         </div>
@@ -184,31 +198,37 @@
                 </div>
             </div>
             <div class="event overflow-hidden h-fit hidden w-full flex-col items-center gap-[3vw]">
-                <h1 class="text-center pt-[3vw] uppercase">event</h1>
+                <h1 class="text-center pt-[3vw] text-[2vw] font-inter font-[200] sm:text-[5vw] uppercase">event</h1>
                 <section class="secBox w-full h-fit flex flex-col items-center ">
                     <div id="eventContainer" class="Event eventContainer h-fit w-[95%]">
                     </div>
                 </section>
-                <div class="hideBtn magnet bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
+                <div class="hideBtn mt-10 magnet bg-[#00000015] h-[5vh] w-[5vw] sm:w-fit sm:h-fit sm:px-3 sm:py-2 rounded-lg text-center flex justify-center items-center">
                     <button class="h-full w-full" onclick="hideSection(1)">HIDE</button>
                 </div>
             </div>
             <div id="wedding" class="wedding overflow-hidden h-fit hidden w-full flex-col gap-[3vw] items-center">
-                <h1 class="text-center pt-[3vw] uppercase">wedding</h1>
+                <h1 class="text-center pt-[3vw] text-[2vw] font-inter font-[200] sm:text-[5vw] uppercase">wedding</h1>
                 <section class="secBox w-full h-fit flex flex-col items-center ">
                     <div id="weddingContainer" class="Wedding weddingContainer h-fit w-[95%]">
                     </div>
                 </section>
-                <div class="hideBtn magnet bg-red-100 h-[5vh] w-[5vw] rounded-lg text-center flex justify-center items-center">
+                <div class="hideBtn mt-10 magnet bg-[#00000015] h-[5vh] w-[5vw] sm:w-fit sm:h-fit sm:px-3 sm:py-2 rounded-lg text-center flex justify-center items-center">
                     <button class="h-full w-full" onclick="hideSection(2)">HIDE</button>
                 </div>
             </div>
-            <div class="pre-wedding hidden h-fit w-full">
-
+            <div class="preWedding hidden h-fit w-full flex-col gap-[3vw] items-center">
+                <h1 class="text-center pt-[3vw] text-[2vw] font-inter font-[200] sm:text-[5vw] uppercase">pre wedding</h1>
+                <section class="secBox w-full h-fit flex flex-col items-center ">
+                    <div id="preWeddingContainer" class="PreWedding preWeddingContainer h-fit w-[95%]">
+                    </div>
+                </section>
+                <div class="hideBtn mt-10 magnet bg-[#00000015] h-[5vh] w-[5vw] sm:w-fit sm:h-fit sm:px-3 sm:py-2 rounded-lg text-center flex justify-center items-center">
+                    <button class="h-full w-full" onclick="hideSection(3)">HIDE</button>
+                </div>
             </div>
         </div>
-        <div class="page4 h-[100vh] w-full bg-[#fffef8] ">
-            hbiergbferjkb
+        <div class="page4 min-h-screen w-full bg-[#fffef8] ">
         </div>
     </main>
 

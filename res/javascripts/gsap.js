@@ -48,16 +48,14 @@ let landingPageAnimation = function () {
   tl1.from("#jgt9",{
     opacity: 0,
     x: -100,
-    duration: 3,
-    ease: "elastic.out(1,0.5)",
+    duration: 1,
+    // ease: "elastic.out(1,0.5)",
   })
   tl1.from(".down .left", {
-    stagger: 0.2,
     opacity: 0,
     x: 100,
   });
   tl1.from(".down .right", {
-    stagger: 0.2,
     opacity: 0,
     x: -100,
   });
@@ -136,19 +134,24 @@ function showWedding() {
 }
 
 function showPreWedding() {
-  // currentSection = 3;
-  // gsap.to(".preWedding",{
-  //   display: "flex",
-  // })
-  // gsap.from(".preWedding .box",{
-  //   x:100,
-  //   opacity:0,
-  //   stagger:0.1,
-  // })
-  // gsap.to(".event,.wedding",{
-  //   display:"none"
-  // })
-  // setTimeout(() => {
-  //   locomotiveScroll.scrollTo(document.querySelector(".preWedding"));
-  // }, 500);
+  currentSection = 3;
+  gsap.to(".preWedding",{
+    display: "flex",
+  })
+  gsap.from(".preWedding .box",{
+    x:100,
+    opacity:0,
+    stagger:0.1,
+  })
+  gsap.to(".event,.wedding",{
+    display:"none"
+  })
+  setTimeout(() => {
+    locomotiveScroll.scrollTo(document.querySelector(".preWedding"));
+  }, 500);
+  let elem = "";
+        preWeddingImgLinks.forEach((link) => {
+          elem += `<div class="swiper-slide"><div class="swiper-zoom-container "><img src="${link}"></img></div></div>`;
+          document.querySelector(".overlay .swiper-wrapper").innerHTML = elem;
+        });
 }

@@ -1,10 +1,13 @@
-let profilePhoto = document.querySelector("#page1Img");
+const profilePhoto = document.querySelector("#page1Img");
 let prevY = 0;
-let galleryImages = document.querySelectorAll(".box img");
-let secImgs = document.querySelectorAll(".page3container .secLink img");
-let overlay = document.querySelector(".overlay");
+const galleryImages = document.querySelectorAll(".box img");
+const secImgs = document.querySelectorAll(".page3container .secLink img");
+const overlay = document.querySelector(".overlay");
+const profilePic = document.querySelector(".dpImg");
+const menuBtn = document.querySelector(".navmenu")
 let currentImage = 0;
 let zoom = false;
+let menu = false;
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth > 639) {
@@ -21,8 +24,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-window.addEventListener("load",async function () {
- await landingPageAnimation();
+window.addEventListener("load", function () {
+  landingPageAnimation();
 });
 
 window.addEventListener("scroll", function (elem) {
@@ -64,7 +67,7 @@ galleryImages.forEach((image) => {
     } else if (currentSection === 2) {
       currentImage = weddingImgLinks.indexOf(image.src)  
     } else if (currentSection === 3) {
-
+      currentImage = preWeddingImgLinks.indexOf(image.src) //
     }
     const swiper3 = new Swiper(".mySwiper", {
       keyboard: {
@@ -121,6 +124,7 @@ function hideSection(sec){
     time = 550;
   }else if(sec === 3){
     document.querySelector(".preWedding").style.display = "none";
+    time = 550;
   }
   setTimeout(() => {
     locomotiveScroll.scrollTo(document.querySelector("#gallery"));
@@ -143,3 +147,38 @@ links.forEach((link,idx) => {
     
   })
 })
+
+profilePic.addEventListener('mouseenter',()=>{
+  gsap.to(profilePic,{
+    transform: "scale(1.2)"
+  })
+})
+profilePic.addEventListener('mouseleave',()=>{
+  gsap.to(profilePic,{
+    transform: "scale(1)"
+  })
+})
+
+
+menuBtn.addEventListener('click',()=>{
+  menu = !menu;
+  if(menu){
+    locomotiveScroll.stop()
+    gsap.to(menuBtn,{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+      onStart:()=>{
+        menuBtn.innerHTML = `<i class="ri-close-line"></i>` 
+      }
+    })
+  }else{
+    locomotiveScroll.start()
+    gsap.to(menuBtn,{
+      backgroundColor: "#000000",
+      color: "#ffffff",
+      onStart:()=>{
+        menuBtn.textContent = "Menu" 
+      }
+    })
+  }
+});
