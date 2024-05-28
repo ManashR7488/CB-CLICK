@@ -44,24 +44,39 @@
                     <li class="magnet"><a href="#home">Home</a></li>
                     <li class="magnet"><a href="#about">About</a></li>
                     <li class="magnet"><a href="#wedding">Weddings</a></li>
-                    <li class="magnet"><a href="">Pre Wedding</a></li>
-                    <li class="magnet"><a href="">Services</a></li>
+                    <li class="magnet"><a href="#preWedding">Pre Wedding</a></li>
                     <li class="magnet"><a href="">Explore</a></li>
+                    <li class="magnet"><a href="">contact</a></li>
                 </ul>
             </div>
-            <button class="navmenu hidden sm:block fixed bg-black h-fit w-fit px-[2vw] py-1 right-[6vw] z-[200] text-white rounded-2xl">Menu</button>   
-            <div class="menu hidden sm:flx bg-[#000000f1] text-white fixed top-0 h-[50vh] w-screen z-[120]">
+            <!-- translate-y-[-100%] -->
+            <button class="navmenu hidden sm:block fixed bg-black h-fit w-fit px-[2vw] py-1 right-[6vw] z-[200] text-white rounded-2xl uppercase text-[3.45vw]">Menu</button>   
+            <div class="menu hidden translate-y-[-100%]  sm:flex bg-[#000000f1] text-white fixed top-0 h-[50vh] w-screen z-[120]">
                 <div class="menuLeft w-1/2 h-full flex items-center ">
-                    <ul class="flex flex-col h-[70%] w-full justify-evenly uppercase items-start px-10 text-[4vw] ">
+                    <ul class="flex text-cyan-100  flex-col h-[70%] w-full justify-evenly uppercase items-start px-10 text-[4vw] ">
                         <li class="magnet"><a href="#home">Home</a></li>
                         <li class="magnet"><a href="#about">About</a></li>
                         <li class="magnet"><a href="#wedding">Weddings</a></li>
-                        <li class="magnet"><a href="">Pre Wedding</a></li>
-                        <li class="magnet"><a href="">Services</a></li>
+                        <li class="magnet"><a href="#preWedding">Pre Wedding</a></li>
                         <li class="magnet"><a href="">Explore</a></li>
+                        <li class="magnet"><a href="">Contact</a></li>
                     </ul>
+                </div> 
+                <div class="menuRight w-1/2 h-full flex flex-col justify-end items-center">
+                    <div class="menuContact text-[#ffffff79] w-full h-2/5 pl-[5vw] flex flex-col items-start justify-center">
+                        <h1>Contact...</h1>
+                        <h4 class="text-[3.1vw] text-cyan-50 font-inter font-[300] magnet pl-5 normal-case"><a href=""><i class="ri-mail-fill"></i> abcd@gmail.com</a></h4>
+                        <h4 class="text-[3.1vw] text-cyan-50 font-inter font-[300] pl-5 flex flex-col">
+                            <span><i class="ri-phone-fill"></i> +91 7854035855</span>
+                            <span><i class="ri-phone-fill"></i> +91 9938704005</span>
+                        </h4>
+                    </div>
+                    <div class="menuConnect text-[#ffffff79] w-full h-2/5 pl-[5vw] flex flex-col items-start justify-start">
+                        <h4 class="b font-extralight">Connect With Me...</h4>
+                        <h4 class="a font-[400] magnet pl-5 mt-1 text-[#ecfeffe4] "><a href="">instagram</a></h4>
+                        <h4 class="a font-[400] magnet pl-5 mt-1 text-[#ecfeffe4] "><a href="">facebook</a></h4>
+                    </div>
                 </div>
-                <div class="menuRight w-1/2 h-full bg-red-400"></div>
             </div>
         </nav>
         <div class="page1 bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
@@ -118,8 +133,8 @@
                         <span>Our team excels in capturing happiness and emotions with complete effectiveness, delivering high-quality pictures that speak volumes. Known for our candid wedding photography, we have earned a reputation as the leading and affordable photographers in Paikmal. We perfectly encapsulate the joy and significance of each event, ensuring that every image reflects the genuine emotions and memorable moments of your special day.</span>
                     </h1>
                 </div>
-                <div class="page2upImg h-[100%] w-[30%] sm:w-[50%] sm:h-[50%] overflow-hidden rounded-md magnet">
-                <img class="h-[90%] object-cover w-full rounded-md"  src="https://images.unsplash.com/photo-1633104502699-b2ecf0fee294?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" alt="">
+                <div class="page2upImg sm:pointer-events-none h-[100%] w-[30%] sm:w-[50%] sm:h-[50%] overflow-hidden rounded-md magnet">
+                    <img class="h-[90%] object-cover w-full rounded-md"  src="https://images.unsplash.com/photo-1633104502699-b2ecf0fee294?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D" alt="">
                 </div>
             </div>
             <div class="page2down mt-10 sm:mt-2 w-full h-[80%] flex justify-center items-center gap-[2vw] sm:block">
@@ -137,8 +152,8 @@
                 </div>
             </div>
         </div>
-        <div class="page3 overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] sm:pt-[4vh] flex flex-col items-center gap-3">
-            <h1 id="gallery" class="text-center font-heading  text-[4vw] sm:text-[7vw] font-[300]">Gallery</h1>
+        <div class="page3 overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] sm:pb-[5vw] sm:pt-[4vh] flex flex-col items-center gap-3">
+            <h1 id="gallery" class="text-center font-heading  text-[4vw] sm:text-[7vw] font-[300]">Photo Gallery</h1>
             <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh] sm:hidden">
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
                     <img class="w-full h-full object-cover scale-[1.2]" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
@@ -156,40 +171,49 @@
             <div class="mobile hidden h-fit w-full sm:flex justify-center items-center gap-[5vw]">
                 <div class="swiperContainer h-[30vh] ">
                     <div class="swiper mySwiperD flex items-center justify-center">
-                        <div class="swiper-wrapper font-josefin uppercase font-[200] text-[3vw]">
-                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                        <div class="swiper-wrapper font-josefin uppercase font-[200] text-[2.5vw]">
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
                             <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
                             <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
                             <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
                             <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
                             <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
                             <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
                             <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
                             <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
                             <h1>click to view</h1>
                           </div>
-                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center">
+                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
                             <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
                             <h1>click to view</h1>
                           </div>
@@ -217,7 +241,7 @@
                     <button class="h-full w-full" onclick="hideSection(2)">HIDE</button>
                 </div>
             </div>
-            <div class="preWedding hidden h-fit w-full flex-col gap-[3vw] items-center">
+            <div id="preWedding" class="preWedding hidden h-fit w-full flex-col gap-[3vw] items-center">
                 <h1 class="text-center pt-[3vw] text-[2vw] font-inter font-[200] sm:text-[5vw] uppercase">pre wedding</h1>
                 <section class="secBox w-full h-fit flex flex-col items-center ">
                     <div id="preWeddingContainer" class="PreWedding preWeddingContainer h-fit w-[95%]">
@@ -228,7 +252,33 @@
                 </div>
             </div>
         </div>
-        <div class="page4 min-h-screen w-full bg-[#fffef8] ">
+        <div class="page4 min-h-screen w-full bg-[#fff8fd] ">
+            <h1 class=" text-center pt-[3vw] font-jost text-[3.5vw] font-[300]">Services We Provide</h1>
+            <div class="serviceContainer w-full h-fit py-2 flex flex-col items-center gap-0 mt-[3vw]">
+                <div class="service1 w-full h-fit py-4  flex bg-[#dddddd]">
+                    <div class="portraitImg h-[50vh] w-[50vw] flex gap-5 overflow-auto bg-red-200 pl-3">
+                        
+                    </div>
+                    <div class="serDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Portrait Photography</h1>
+                        <p>We specialize in portrait photography, capturing the unique personality and essence of individuals, families, and groups. Our sessions are designed to create timeless images that reflect true emotions and connections.</p>
+                        <p class="text-center ">"A portrait is a biography in a single frame, whispering stories that words cannot tell. It captures the essence of an individual in a moment of pure expression."</p>
+                    </div>
+                </div>
+                <div class="service2 w-full h-fit py-4  flex bg-[#dddddd00]">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="page5 min-h-screen w-full bg-black flex items-center">
+            <div class="vfg h-[50vh] w-1/2 bg-red-500 overflow-auto">
+                <div class="con h-full flex gap-3 w-fit">
+                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
+                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
+                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
+                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
+                </div>
+            </div>
         </div>
     </main>
 

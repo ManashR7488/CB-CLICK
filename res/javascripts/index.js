@@ -8,6 +8,7 @@ const menuBtn = document.querySelector(".navmenu")
 let currentImage = 0;
 let zoom = false;
 let menu = false;
+let menuOpen = true;
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth > 639) {
@@ -132,7 +133,7 @@ function hideSection(sec){
 }
 
 
-let links = document.querySelectorAll('.navLinkContainer ul li a')
+const links = document.querySelectorAll('.navLinkContainer ul li a')
 
 links.forEach((link,idx) => {
   link.addEventListener('click', (e) => {
@@ -141,12 +142,48 @@ links.forEach((link,idx) => {
     const element = document.getElementById(id)
     if(idx === 2){
       showWedding();
+    }else if(idx === 3){
+      showPreWedding()
     }else{
       locomotiveScroll.scrollTo(element)
     }
     
   })
 })
+
+const menuLinks = document.querySelectorAll(".menu ul li a");
+
+menuLinks.forEach((link,idx) => {
+  link.addEventListener('click', (e) => {
+    locomotiveScroll.start()
+    e.preventDefault()
+    const id = e.target.getAttribute('href').slice(1)
+    const element = document.getElementById(id)
+    if(idx === 2){
+      showWedding();
+    }else if(idx === 3){
+      showPreWedding()
+    }else{
+      locomotiveScroll.scrollTo(element)
+    }
+    setTimeout(() => {
+      gsap.to(menuBtn,{
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        fontSize:"3.45vw",
+        paddingLeft: "2vw",
+        paddingRight: "2vw",
+        paddingTop: "0.25rem",
+        paddingBottom: "0.25rem",
+        onStart:()=>{
+          menuBtn.textContent = "Menu" 
+        }
+      });
+      closeMenu();
+    }, 500);
+  })
+})
+
 
 profilePic.addEventListener('mouseenter',()=>{
   gsap.to(profilePic,{
@@ -167,18 +204,37 @@ menuBtn.addEventListener('click',()=>{
     gsap.to(menuBtn,{
       backgroundColor: "#ffffff",
       color: "#000000",
+      fontSize:"4vw",
+      padding:"0.2vw 1.2vw",
       onStart:()=>{
         menuBtn.innerHTML = `<i class="ri-close-line"></i>` 
       }
     })
+    if(menuOpen){
+      openMenu(); 
+      menuOpen = false;
+    }else{
+      openMenu2();
+    }
   }else{
     locomotiveScroll.start()
     gsap.to(menuBtn,{
       backgroundColor: "#000000",
       color: "#ffffff",
+      fontSize:"3.45vw",
+      paddingLeft: "2vw",
+      paddingRight: "2vw",
+      paddingTop: "0.25rem",
+      paddingBottom: "0.25rem",
       onStart:()=>{
         menuBtn.textContent = "Menu" 
       }
-    })
+    });
+    closeMenu(); 
   }
 });
+
+setInterval(() => {
+  menuOpen = true;
+}, 30000);
+
