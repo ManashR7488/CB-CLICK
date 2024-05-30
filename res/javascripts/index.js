@@ -4,7 +4,8 @@ const galleryImages = document.querySelectorAll(".box img");
 const secImgs = document.querySelectorAll(".page3container .secLink img");
 const overlay = document.querySelector(".overlay");
 const profilePic = document.querySelector(".dpImg");
-const menuBtn = document.querySelector(".navmenu")
+const menuBtn = document.querySelector(".navmenu");
+const seeMoreBtn = document.querySelector("#SeeMore");
 let currentImage = 0;
 let zoom = false;
 let menu = false;
@@ -26,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("load", function () {
-  landingPageAnimation();
+  // landingPageAnimation();
 });
 
 window.addEventListener("scroll", function (elem) {
@@ -64,17 +65,17 @@ galleryImages.forEach((image) => {
 
   image.addEventListener("click", () => {
     if (currentSection === 1) {
-      currentImage = eventImgLinks.indexOf(image.src)  
+      currentImage = eventImgLinks.indexOf(image.src);
     } else if (currentSection === 2) {
-      currentImage = weddingImgLinks.indexOf(image.src)  
+      currentImage = weddingImgLinks.indexOf(image.src);
     } else if (currentSection === 3) {
-      currentImage = preWeddingImgLinks.indexOf(image.src) //
+      currentImage = preWeddingImgLinks.indexOf(image.src); //
     }
     const swiper3 = new Swiper(".mySwiper", {
       keyboard: {
         enabled: true,
       },
-      zoom:true,
+      zoom: true,
       initialSlide: currentImage,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -97,7 +98,6 @@ const closeOverlay = () => {
   document.querySelector(".overlay").style.display = "none";
 };
 
-
 secImgs.forEach((image) => {
   image.addEventListener("mouseover", () => {
     image.style.transform = "scale(1)";
@@ -112,125 +112,128 @@ gLink.addEventListener("click", function (e) {
   locomotiveScroll.scrollTo(document.querySelector("#gallery"));
 });
 
-function hideSection(sec){
+function hideSection(sec) {
   let time = 0;
 
   locomotiveScroll.scrollTo(document.querySelector("#gugufiy"));
-  
-  if(sec === 1){
+
+  if (sec === 1) {
     document.querySelector(".event").style.display = "none";
     time = 300;
-  }else if(sec === 2){
+  } else if (sec === 2) {
     document.querySelector(".wedding").style.display = "none";
     time = 550;
-  }else if(sec === 3){
+  } else if (sec === 3) {
     document.querySelector(".preWedding").style.display = "none";
     time = 550;
   }
+  ScrollTrigger.refresh();
   setTimeout(() => {
     locomotiveScroll.scrollTo(document.querySelector("#gallery"));
   }, time);
 }
 
+const links = document.querySelectorAll(".navLinkContainer ul li a");
 
-const links = document.querySelectorAll('.navLinkContainer ul li a')
-
-links.forEach((link,idx) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault()
-    const id = e.target.getAttribute('href').slice(1)
-    const element = document.getElementById(id)
-    if(idx === 2){
+links.forEach((link, idx) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = e.target.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    if (idx === 2) {
       showWedding();
-    }else if(idx === 3){
-      showPreWedding()
-    }else{
-      locomotiveScroll.scrollTo(element)
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
+    } else if (idx === 3) {
+      showPreWedding();
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
+    } else {
+      locomotiveScroll.scrollTo(element);
     }
-    
-  })
-})
+  });
+});
 
 const menuLinks = document.querySelectorAll(".menu ul li a");
 
-menuLinks.forEach((link,idx) => {
-  link.addEventListener('click', (e) => {
-    locomotiveScroll.start()
-    e.preventDefault()
-    const id = e.target.getAttribute('href').slice(1)
-    const element = document.getElementById(id)
-    if(idx === 2){
+menuLinks.forEach((link, idx) => {
+  link.addEventListener("click", (e) => {
+    locomotiveScroll.start();
+    e.preventDefault();
+    const id = e.target.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    if (idx === 2) {
       showWedding();
-    }else if(idx === 3){
-      showPreWedding()
-    }else{
-      locomotiveScroll.scrollTo(element)
+    } else if (idx === 3) {
+      showPreWedding();
+    } else {
+      locomotiveScroll.scrollTo(element);
     }
     setTimeout(() => {
-      gsap.to(menuBtn,{
+      gsap.to(menuBtn, {
         backgroundColor: "#000000",
         color: "#ffffff",
-        fontSize:"3.45vw",
+        fontSize: "3.45vw",
         paddingLeft: "2vw",
         paddingRight: "2vw",
         paddingTop: "0.25rem",
         paddingBottom: "0.25rem",
-        onStart:()=>{
-          menuBtn.textContent = "Menu" 
-        }
+        onStart: () => {
+          menuBtn.textContent = "Menu";
+        },
       });
       closeMenu();
     }, 500);
-  })
-})
+  });
+});
 
+profilePic.addEventListener("mouseenter", () => {
+  gsap.to(profilePic, {
+    transform: "scale(1.2)",
+  });
+});
+profilePic.addEventListener("mouseleave", () => {
+  gsap.to(profilePic, {
+    transform: "scale(1)",
+  });
+});
 
-profilePic.addEventListener('mouseenter',()=>{
-  gsap.to(profilePic,{
-    transform: "scale(1.2)"
-  })
-})
-profilePic.addEventListener('mouseleave',()=>{
-  gsap.to(profilePic,{
-    transform: "scale(1)"
-  })
-})
-
-
-menuBtn.addEventListener('click',()=>{
+menuBtn.addEventListener("click", () => {
   menu = !menu;
-  if(menu){
-    locomotiveScroll.stop()
-    gsap.to(menuBtn,{
+  if (menu) {
+    locomotiveScroll.stop();
+    gsap.to(menuBtn, {
       backgroundColor: "#ffffff",
       color: "#000000",
-      fontSize:"4vw",
-      padding:"0.2vw 1.2vw",
-      onStart:()=>{
-        menuBtn.innerHTML = `<i class="ri-close-line"></i>` 
-      }
-    })
-    if(menuOpen){
-      openMenu(); 
+      fontSize: "4vw",
+      padding: "0.2vw 1.2vw",
+      onStart: () => {
+        menuBtn.innerHTML = `<i class="ri-close-line"></i>`;
+      },
+    });
+    if (menuOpen) {
+      openMenu();
       menuOpen = false;
-    }else{
+    } else {
       openMenu2();
     }
-  }else{
-    locomotiveScroll.start()
-    gsap.to(menuBtn,{
+  } else {
+    locomotiveScroll.start();
+    gsap.to(menuBtn, {
       backgroundColor: "#000000",
       color: "#ffffff",
-      fontSize:"3.45vw",
+      fontSize: "3.45vw",
       paddingLeft: "2vw",
       paddingRight: "2vw",
       paddingTop: "0.25rem",
       paddingBottom: "0.25rem",
-      onStart:()=>{
-        menuBtn.textContent = "Menu" 
-      }
+      onStart: () => {
+        menuBtn.textContent = "Menu";
+      },
     });
-    closeMenu(); 
+    closeMenu();
   }
 });
 
@@ -238,3 +241,24 @@ setInterval(() => {
   menuOpen = true;
 }, 30000);
 
+let open = false;
+let upDown = document.querySelector("#SeeMore i")
+seeMoreBtn.addEventListener("click", () =>{
+  open = !open;
+  if(open){
+    upDown.classList.replace('ri-arrow-down-wide-fill','ri-arrow-up-wide-fill')
+    gsap.to(".serviceContainer", {
+      height: "fit-content",
+    })
+    ScrollTrigger.refresh();
+  }else{
+    upDown.classList.replace('ri-arrow-up-wide-fill','ri-arrow-down-wide-fill')
+    gsap.to(".serviceContainer", {
+      height: "115vh",
+    })
+    locomotiveScroll.scrollTo(document.getElementById("89nffv89"))
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+  }
+})

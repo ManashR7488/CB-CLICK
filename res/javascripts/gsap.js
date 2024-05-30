@@ -75,13 +75,24 @@ let landingPageAnimation = function () {
   });
 };
 
-gsap.to(".page1,.page2,.page3,.main", {
+gsap.to(".page1,.page2,.page3,.main,.page4", {
   backgroundColor: "#fcf8e4",
   scrollTrigger: {
     trigger: ".page2",
     scrub: 0.5,
     start: "top bottom",
     end: "top 40%",
+  },
+});
+
+gsap.to(".page4", {
+  backgroundColor: "#ffe4e4",
+  scrollTrigger: {
+    trigger: ".page4",
+    scrub: 0.5,
+    start: "top 20",
+    end: "top -50%",
+
   },
 });
 
@@ -99,6 +110,7 @@ function showEvent() {
     x: 100,
     opacity: 0,
     stagger: 0.1,
+    onStart: function() {ScrollTrigger.refresh();}
   });
   setTimeout(() => {
     locomotiveScroll.scrollTo(document.querySelector(".event"));
@@ -119,10 +131,12 @@ function showWedding() {
     x: 100,
     opacity: 0,
     stagger: 0.1,
+    onStart: function() {ScrollTrigger.refresh();}
   });
   gsap.to(".event,.preWedding", {
     display: "none",
   });
+  
   setTimeout(() => {
     locomotiveScroll.scrollTo(document.querySelector(".wedding"));
   }, 500);
@@ -142,6 +156,7 @@ function showPreWedding() {
     x:100,
     opacity:0,
     stagger:0.1,
+    onStart: function() {ScrollTrigger.refresh();}
   })
   gsap.to(".event,.wedding",{
     display:"none"
@@ -207,3 +222,93 @@ function closeMenu(){
     ease: "expo.out"
   })
 }
+
+gsap.from(".service1",{
+  opacity:0,
+  y:150,
+  // duration: 0.5,
+  scrollTrigger:{
+    trigger: ".service1",
+    start: "top 105%",
+    end: "top 102%",
+    // markers:true,
+    scrub:1
+  }
+})
+
+gsap.from(".service2",{
+  opacity:0,
+  y:150,
+  scrollTrigger:{
+    trigger: ".service2",
+    start: "top 105%",
+    end: "top 102%",
+    scrub:1,
+  }
+})
+
+gsap.from(".service3",{
+  opacity:0,
+  y:150,
+  scrollTrigger:{
+    trigger: ".service3",
+    start: "top 105%",
+    end: "top 102%",
+    scrub:1,
+  }
+})
+
+gsap.from(".service4",{
+  opacity:0,
+  y:150,
+  scrollTrigger:{
+    trigger: ".service4",
+    start: "top 105%",
+    end: "top 102%",
+    scrub:1,
+    // markers:true
+  }
+})
+
+gsap.from(".service5",{
+  opacity:0,
+  y:150,
+  scrollTrigger:{
+    trigger: ".service5",
+    start: "top 105%",
+    end: "top 102%",
+    scrub:1,
+    // markers:true
+  }
+})
+
+gsap.from(".service6",{
+  opacity:0,
+  y:150,
+  scrollTrigger:{
+    trigger: ".service6",
+    start: "top 105%",
+    end: "top 102%",
+    scrub:1,
+    // markers:true
+  }
+})
+
+gsap.to("#SeeMore i",{
+  y:5,
+  duration:0.9,
+  repeat:-1,
+  yoyo:true
+})
+
+
+gsap.to(".main",{
+  backgroundColor: "#00000000",
+  scrollTrigger:{
+    trigger:".page5",
+    start: "top 10%",
+    end:"top 5%",
+    scrub:1,
+    // markers:true
+  }
+})

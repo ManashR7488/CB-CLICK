@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./res/stylesheets/loco.css">
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
-<body >
+<body class="">
     <div class="loader flex h-[100vh] w-[100vw] fixed z-[999] bg-white justify-center items-center">
         <img src="./images/loading.gif" alt="">
         <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
@@ -31,7 +31,9 @@
           <i class="ri-close-line"></i>
         </button>
     </div>
-    
+    <div class="backgroundImg fixed h-screen w-full z-[-50]">
+        <img class="h-full w-full object-cover" src="https://digiartphotography.com/wp-content/uploads/candid-1024x682.jpg" alt="">
+    </div>
     <main class="main bg-[#000000] relative">
         <nav class="nav sm:bg-[#fffef888] px-5 sm:px-0 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
             <div class="logoImg magnet sm:px-5 ml-[5%] h-[8vh] sm:h-[80%]">
@@ -152,13 +154,13 @@
                 </div>
             </div>
         </div>
-        <div class="page3 overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] sm:pb-[5vw] sm:pt-[4vh] flex flex-col items-center gap-3">
+        <div class="page3 overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] pb-[10vh] sm:pb-[5vw] sm:pt-[4vh] flex flex-col items-center gap-3">
             <h1 id="gallery" class="text-center font-heading  text-[4vw] sm:text-[7vw] font-[300]">Photo Gallery</h1>
+            <div class=" w-full px-[5vw] text-[1.5vw] text-center font-josefin">
+                <p class="py-10">Welcome to our photo gallery, where each image captures a cherished moment and tells an untold story. From joyous celebrations to intimate portraits, our gallery showcases the artistry and passion in every photograph. Immerse yourself in the timeless elegance of our visual narratives and let each picture speak the language of memories.</p>
+                <h4 class="font-[200]">Click the bellow sections to See our work.</h4>
+            </div>
             <div class="page3container h-fit w-full flex justify-center items-center gap-[5vw] py-[10vh] sm:hidden">
-                <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
-                    <img class="w-full h-full object-cover scale-[1.2]" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
-                    <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">event</h1>
-                </div>
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showWedding()">
                     <img class="w-full h-full object-cover scale-[1.2]" src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" alt="">
                     <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800] ">wedding</h1>
@@ -166,6 +168,10 @@
                 <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showPreWedding()">
                     <img class="w-full h-full object-cover scale-[1.2]" src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" alt="">
                     <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">pre-wedding</h1>
+                </div>
+                <div class="secLink relative cursor-pointer  flex justify-center items-center w-[40vh] h-[25vh] text-center overflow-hidden rounded-lg" onclick="showEvent()">
+                    <img class="w-full h-full object-cover scale-[1.2]" src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" alt="">
+                    <h1 class="text-white pointer-events-none absolute opacity-0 uppercase font-inter font-[800]">event</h1>
                 </div>
             </div>
             <div class="mobile hidden h-fit w-full sm:flex justify-center items-center gap-[5vw]">
@@ -252,33 +258,176 @@
                 </div>
             </div>
         </div>
-        <div class="page4 min-h-screen w-full bg-[#fff8fd] ">
-            <h1 class=" text-center pt-[3vw] font-jost text-[3.5vw] font-[300]">Services We Provide</h1>
-            <div class="serviceContainer w-full h-fit py-2 flex flex-col items-center gap-0 mt-[3vw]">
-                <div class="service1 w-full h-fit py-4  flex bg-[#dddddd]">
-                    <div class="portraitImg h-[50vh] w-[50vw] flex gap-5 overflow-auto bg-red-200 pl-3">
-                        
+        <div class="page4 min-h-screen w-full bg-[#fcf8e4]">
+            <h1 class=" text-center pt-[3vw] font-name  text-[3.5vw] font-[400] uppercase">Services We Provide</h1>
+            <div class="serviceContainer relative overflow-hidden w-full h-[115vh] py-2 pb-5 flex flex-col items-center gap-5 mt-[3vw]">
+                <button id="SeeMore" class="magnet px-4 py-1 absolute z-[2] bottom-[-0.2vw] bg-[#d3549a] rounded-[2vw] flex"><i class="ri-arrow-down-wide-fill translate-y-[-5px]"></i></button>
+                <div class="service1 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="portraitImg cursor-grab active:cursor-grabbing h-[50vh]  w-[50%]">
+                        <div class="porSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/98/70/97/9870977ba0bd4a482e2a2aed06173397.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/f9/fe/d1/f9fed1806b75833059e821c469b34337.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/c2/d7/86/c2d786c1383dfbdace06026c9c2ff041.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/05/12/aa/0512aa7fe3513dd588cd9a45cc32ea1f.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="serDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                    <div class="porDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
                         <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Portrait Photography</h1>
-                        <p>We specialize in portrait photography, capturing the unique personality and essence of individuals, families, and groups. Our sessions are designed to create timeless images that reflect true emotions and connections.</p>
+                        <p id="89nffv89">We specialize in portrait photography, capturing the unique personality and essence of individuals, families, and groups. Our sessions are designed to create timeless images that reflect true emotions and connections.</p>
                         <p class="text-center ">"A portrait is a biography in a single frame, whispering stories that words cannot tell. It captures the essence of an individual in a moment of pure expression."</p>
                     </div>
                 </div>
-                <div class="service2 w-full h-fit py-4  flex bg-[#dddddd00]">
-                    
+                <div class="service2 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="wedDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Wedding Photography</h1>
+                        <p>Our wedding photography service is all about capturing the joy, love, and special moments of your big day. From pre-wedding shoots to the ceremony and reception, we ensure every detail is beautifully documented, creating memories that will last a lifetime.</p>
+                        <p class="text-center ">A wedding is but a moment, a marriage a lifetime. Let us capture the eternity in a photograph, preserving the joy and love of your special day forever.</p>
+                    </div>
+                    <div class="wedImg h-[50vh]  w-[50%]">
+                        <div class="wedSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/7c/2a/76/7c2a7678d3d17823cabd65c4c463a442.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/15/d7/a8/15d7a85b0c62f9a68d488153ca86333d.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/40/bd/bf/40bdbf68dbb3eeee0b432f10b58cd761.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/18/78/7d/18787dda6c691bd80d075adf06933acd.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service3 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="EvenImg cursor-grab active:cursor-grabbing h-[50vh]  w-[50%]">
+                        <div class="evenSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://miro.medium.com/v2/resize:fit:1060/1*f04K1X6fjsIXoUzZZDndgQ.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://img3.exportersindia.com/product_images/bc-full/2021/11/9148538/event-photography-500x500--1636524294.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://5.imimg.com/data5/SELLER/Default/2024/3/402873800/DI/HI/UE/1259807/birthday-event-photography-service.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://static.wixstatic.com/media/579cb4_82dc810ce29249dab9511b2071d84b91~mv2.jpg/v1/fill/w_320,h_213,q_90/579cb4_82dc810ce29249dab9511b2071d84b91~mv2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="evenDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Event Photography</h1>
+                        <p>We offer comprehensive event photography services for all occasions, including corporate functions, birthday parties, baby showers, anniversaries, and more. Our goal is to capture the essence of your event, preserving every significant moment with high-quality images.</p>
+                        <p class="text-center ">"Moments may be fleeting, but memories are timeless. Allow us to etch your event into eternity, transforming every precious second into a lasting treasure."</p>
+                    </div>
+                </div>
+                <div class="service4 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="comDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Commercial Photography</h1>
+                        <p>Our commercial photography services cater to businesses of all sizes. We create stunning images of products, real estate, and promotional materials, enhancing your brand's visual appeal and helping you connect with your audience effectively.</p>
+                        <p class="text-center ">"Every product has a tale waiting to be told. Our photography brings its story to vibrant life, showcasing its unique charm and allure through the lens."</p>
+                    </div>
+                    <div class="comImg h-[50vh]  w-[50%]">
+                        <div class="comSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/7e/83/05/7e8305e9bd9699b733e5da698cf54b8d.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/12/74/8a/12748aff76320f2824c4c7ea96fd7542.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/fb/1e/1d/fb1e1d9575ad1810813764715783a984.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/736x/7e/27/5d/7e275d1412e2384b43c3ad349da4c8c7.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/10/06/b7/1006b73755f7a99f07c9ac905b0719b7.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service5 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="fashImg cursor-grab active:cursor-grabbing h-[50vh]  w-[50%]">
+                        <div class="fashSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://shivambhutani.in/wp-content/uploads/2023/02/Pro-Capture-One-0064.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://settlemania.com/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-14-at-11.15.17-AM-1.jpeg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://indiamodels.org/images/chaitanya/fashion_photography_chaitanya_shete.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://5.imimg.com/data5/SELLER/Default/2022/3/CS/UN/IY/14855118/fashion-advertising-photographer-500x500.JPG" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://5.imimg.com/data5/SELLER/Default/2022/3/XM/DG/IX/14855118/fashion-advertising-photographer-500x500.JPG" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fashDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Fashion Photography</h1>
+                        <p>In fashion photography, we bring creativity and style to the forefront. Whether for magazines, catalogs, or online stores, our photoshoots highlight the beauty and elegance of clothing and accessories, ensuring they stand out with artistic flair.</p>
+                        <p class="text-center ">"Fashion is ephemeral, but a striking photograph is forever. Let us immortalize your style, capturing the elegance and flair that define your fashion statement."</p>
+                    </div>
+                </div>
+                <div class="service6 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
+                    <div class="matDescription w-[50%] flex flex-col gap-[2vw] text-start justify-start py-10 px-5 text-[#000000]">
+                        <h1 class="uppercase text-[2vw] font-[300] font-inter mb-7 text-[#d4479e]">Newborn and Maternity Photography</h1>
+                        <p>We cherish the opportunity to capture the precious moments of pregnancy and the early days of a newborn's life. Our maternity and newborn photography sessions are designed to create heartwarming and lasting memories of these fleeting times.</p>
+                        <p class="text-center ">"The miracle of life is wondrous and brief. We capture these moments, making them eternal, so you can cherish the beauty of new beginnings for a lifetime."</p>
+                    </div>
+                    <div class="matImg h-[50vh]  w-[50%]">
+                        <div class="matSwiper h-full w-full overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/77/de/ca/77deca3590f87ca8b29e783185fa84fc.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/13/3a/03/133a0322e798c948555ae602a739880f.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/e7/56/34/e75634d84aab429e1daa96c43520d823.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/564x/c5/61/67/c561673eb9fd3dc5996b436f86854ff9.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide flex justify-center items-center">
+                                    <img class=" object-cover h-full w-[17vw]" src="https://i.pinimg.com/736x/6c/7d/18/6c7d18a1c51552c847a1c2c5d17dad22.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page5 min-h-screen w-full bg-black flex items-center">
-            <div class="vfg h-[50vh] w-1/2 bg-red-500 overflow-auto">
-                <div class="con h-full flex gap-3 w-fit">
-                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
-                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
-                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
-                <div class="rrer h-[95%] w-[16.5vw] bg-blue-300"></div>
-                </div>
-            </div>
+        <div class="page5 min-h-screen w-full bg-[#ffe4e4] flex items-center">
+          
+        </div>
+        <div class="page6 min-h-screen w-full bg-[#00000069]">
+
         </div>
     </main>
 
