@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("load", function () {
-  // landingPageAnimation();
+  landingPageAnimation();
 });
 
 window.addEventListener("scroll", function (elem) {
