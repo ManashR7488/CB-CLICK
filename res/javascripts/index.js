@@ -11,20 +11,43 @@ let zoom = false;
 let menu = false;
 let menuOpen = true;
 
+let allImages = document.querySelectorAll("body img");
+allImages.forEach((image) => {});
+
 window.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth > 639) {
-    Shery.mouseFollower({
-      skew: true,
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 0.3,
-    });
-    Shery.makeMagnet(".magnet", {
-      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-      duration: 1,
-    });
+    cursor.style.display = "block";
+    circleElement.style.display = "block";
+    curText.style.display = "block";
+    makeCursor();
+    makeMagnet();
+    gsap.ticker.add(elasticMouse);
   } else {
+    cursor.style.display = "none";
+    circleElement.style.display = "none";
+    curText.style.display = "none"
+    document.querySelectorAll(".cursor-none").forEach((element)=>{
+      element.classList.remove("cursor-none");
+    })
   }
 });
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 639) {
+    cursor.style.display = "block";
+    circleElement.style.display = "block";
+    curText.style.display = "block";
+    makeCursor();
+    makeMagnet();
+    gsap.ticker.add(elasticMouse);
+  } else {
+    cursor.style.display = "none";
+    circleElement.style.display = "none";
+    document.querySelectorAll(".cursor-none").forEach((element)=>{
+      element.classList.remove("cursor-none");
+    })
+  }
+})
 
 window.addEventListener("load", function () {
   landingPageAnimation();
@@ -53,8 +76,6 @@ window.addEventListener("scroll", function (elem) {
 });
 
 galleryImages.forEach((image) => {
-  image.style.cursor = "pointer";
-
   image.addEventListener("mouseover", () => {
     image.style.transform = "scale(1.2)";
   });
@@ -101,15 +122,49 @@ const closeOverlay = () => {
 secImgs.forEach((image) => {
   image.addEventListener("mouseover", () => {
     image.style.transform = "scale(1)";
+    gsap.to(curText,{
+      fontSize: "0.75vw"
+    })
+    curText.innerHTML = "see<br>images";
+    gsap.to(".cursor", {
+      scale: 5.5,
+      ease: "power4.out",
+      duration: 1,
+      mixBlendMode: "normal",
+      backgroundColor:"#000"
+    });
+    gsap.to(".curOutline", {
+      opacity: 0,
+    });
   });
   image.addEventListener("mouseout", () => {
     image.style.transform = "scale(1.2)";
+    curText.textContent = "";
+    gsap.to(curText,{
+      fontSize: "0.9vw"
+    })
+    gsap.to(".cursor", {
+      scale: 1,
+      ease: "power4.out",
+      duration: 1,
+      mixBlendMode: "difference",
+      backgroundColor:"#fff"
+    });
+    gsap.to(".curOutline", {
+      opacity: 1,
+    });
   });
 });
 
 let gLink = document.querySelector(".heroTextGl");
 gLink.addEventListener("click", function (e) {
   locomotiveScroll.scrollTo(document.querySelector("#gallery"));
+});
+gLink.addEventListener("mouseenter", function (e) {
+  curText.textContent = "click";
+});
+gLink.addEventListener("mouseleave", function (e) {
+  curText.textContent = "";
 });
 
 function hideSection(sec) {
@@ -242,27 +297,79 @@ setInterval(() => {
 }, 30000);
 
 let open = false;
-let upDown = document.querySelector("#SeeMore i")
-seeMoreBtn.addEventListener("click", () =>{
+let see = true;
+let upDown = document.querySelector("#SeeMore i");
+seeMoreBtn.addEventListener("click", () => {
   open = !open;
-  if(open){
-    upDown.classList.replace('ri-arrow-down-wide-fill','ri-arrow-up-wide-fill')
+  see = !see;
+  if (open) {
+    seeMoreBtn.title = "show less"
+    upDown.classList.replace(
+      "ri-arrow-down-wide-fill",
+      "ri-arrow-up-wide-fill"
+    );
     gsap.to(".serviceContainer", {
       height: "fit-content",
-    })
+    });
     ScrollTrigger.refresh();
-  }else{
-    upDown.classList.replace('ri-arrow-up-wide-fill','ri-arrow-down-wide-fill')
+  } else {
+    upDown.classList.replace(
+      "ri-arrow-up-wide-fill",
+      "ri-arrow-down-wide-fill"
+    );
     gsap.to(".serviceContainer", {
-      height: "115vh",
-    })
-    locomotiveScroll.scrollTo(document.getElementById("89nffv89"))
+      height: "114vh",
+    });
+    locomotiveScroll.scrollTo(document.getElementById("89nffv89"));
     setTimeout(() => {
-      ScrollTrigger.refresh();
+      ScrollTrigger.update();
     }, 500);
   }
+});
+
+document.querySelectorAll(".noCursor").forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    cursor.style.display = "none";
+    circleElement.style.display = "none";
+  });
+  element.addEventListener("mouseleave", () => {
+    cursor.style.display = "block";
+    circleElement.style.display = "block";
+  });
+});
+
+
+document.querySelectorAll(".service .za").forEach((element)=>{
+  element.addEventListener("mouseenter", () => {
+    gsap.to(curText,{
+      fontSize: "0.75vw",
+    })
+    curText.textContent = "swipe";
+    gsap.to(".cursor", {
+      scale: 5.5,
+      ease: "power4.out",
+      duration: 1,
+      mixBlendMode: "normal",
+      backgroundColor:"#000"
+    });
+    gsap.to(".curOutline", {
+      opacity: 0,
+    });
+  });
+  element.addEventListener("mouseleave", () => {
+    curText.textContent = "";
+    gsap.to(curText,{
+      fontSize: "0.9vw",
+    })
+    gsap.to(".cursor", {
+      scale: 1,
+      ease: "power4.out",
+      duration: 1,
+      mixBlendMode: "difference",
+      backgroundColor:"#fff"
+    });
+    gsap.to(".curOutline", {
+      opacity: 1,
+    });
+  });
 })
-
-
-
-//hello test
