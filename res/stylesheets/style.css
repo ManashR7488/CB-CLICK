@@ -8,7 +8,6 @@
 }
 
 ::-webkit-scrollbar {
-    /* display: none !important; */
     width: 0.5vw;
 
 }
@@ -161,6 +160,30 @@
     backdrop-filter: blur(7px);
 }
 
+.page6::before{
+    content: "";
+    background-color: #202020;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: -10;
+    top: -5%;
+    border-top-left-radius:38px;
+    border-top-right-radius:38px;
+}
+.social a ,.mailo,.l a{
+    transition: color 0.2s linear;
+}
+
+.social a:hover{
+    color: aqua;
+}
+.mailo:hover{
+    color: aqua;
+}
+.l a:hover{
+    color: aqua;
+}
 
 .curOutline{
     --circle-size: 45px;
@@ -174,3 +197,4 @@
     left: calc(var(--circle-size) / 2 * -1);
     pointer-events: none;
   }
+

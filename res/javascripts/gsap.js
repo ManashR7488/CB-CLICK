@@ -15,10 +15,16 @@ loaderText.textContent.split("").forEach((element) => {
   cl += `<span style="display:inline-block"; id="pop">${element}</span>`;
   loaderText.innerHTML = cl;
 });
-
+gsap.from(".loader h4 span",{
+  opacity:0,
+  stagger:0.2,
+  ease:"power4.out",
+  repeat:-1
+})
 let landingPageAnimation = function () {
   loaderImg.style.display = "none";
-  loaderText.style.display = "block";
+  document.querySelector(".loader h4").style.display = "none";
+  loaderText.style.display = "flex";
   tl1.from("#pop", {
     display: "none",
     y: 100,
@@ -67,6 +73,9 @@ let landingPageAnimation = function () {
     opacity: 0,
     duration: 1.5,
     ease: "elastic.out(1,0.5)",
+    onStart:()=>{
+      localStorage.setItem("animationPlayed", "true");
+    }
   });
   tl2.from(".description .left div div", {
     opacity: 0,
@@ -86,7 +95,7 @@ gsap.to(".page1,.page2,.page3,.main,.page4", {
 });
 
 gsap.to(".page4", {
-  backgroundColor: "#ffe4e4",
+  backgroundColor: "##fefceb",
   scrollTrigger: {
     trigger: ".page4",
     scrub: 0.5,

@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+    width: 0.5vw;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px !important;
+    cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+.curOutline{
+    --circle-size: 45px;
+    position: fixed;
+    z-index: 990;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+  }
+
+  .page1{
+    transform-origin:center 80%;
+}

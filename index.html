@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS-Studio</title>
     <link rel="shortcut icon" href="./images/favIcon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
     <link href='https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css' rel='stylesheet'/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +15,10 @@
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body class="">
-    <div class="loader flex h-[100vh] w-[100vw] fixed z-[999] bg-white justify-center items-center">
-        <img src="./images/loading.gif" alt="">
-        <h1 class="hidden overflow-hidden">WELCOME_TO....</h1>
+    <div class="loader hidden h-[100vh] w-[100vw] fixed z-[999] bg-white flex-col justify-center items-center">
+        <img src="./images/loadingNew.gif" alt="">
+        <h4 class="relative top-[-9vh] text-[1.4vw]">Loading<span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span></h4>
+        <h1 class="hidden overflow-hidden text-[3vw] h-[6.5vh] justify-center items-center">WELCOME~TO....</h1>
     </div>
     <div class="cursor fixed z-[991] h-[11px] w-[11px] pointer-events-none mix-blend-difference bg-[#ffffffe5] rounded-[50%] origin-center uppercase text-[0.2vw] text-center font-bold text-wrap leading-[1.5] flex items-center justify-center"></div>
     <div class="curText fixed top-0 left-0 z-[992] text-white pointer-events-none font-bold text-[0.9vw] uppercase text-center"></div>
@@ -38,7 +38,7 @@
         <img class="h-full w-full object-cover" src="https://digiartphotography.com/wp-content/uploads/candid-1024x682.jpg" alt="https://digiartphotography.com/wp-content/uploads/candid-1024x682.jpg">
     </div>
     <main class="main bg-[#000000] relative">
-        <nav class="nav cursor-none sm:bg-[#fffef888] px-5 sm:px-0 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
+        <nav class="nav cursor-non sm:bg-[#fffef888] px-5 sm:px-0 h-[10vh] fixed z-[99] top-0 w-full flex items-center justify-between sm:h-[7vh]">
             <div class="logoImg magnet sm:px-5 ml-[5%] h-[8vh] sm:h-[80%]">
                 <a href="">
                     <img src="./images/logoImg.png" alt="" class=" object-cover h-full">
@@ -50,8 +50,8 @@
                     <li class="magnet"><a href="#about">About</a></li>
                     <li class="magnet"><a href="#wedding">Weddings</a></li>
                     <li class="magnet"><a href="#preWedding">Pre Wedding</a></li>
-                    <li class="magnet"><a href="">Explore</a></li>
-                    <li class="magnet"><a href="">contact</a></li>
+                    <li class="magnet"><a href="/pages/photos/">Explore</a></li>
+                    <li class="magnet"><a href="/pages/contacts/">contact</a></li>
                 </ul>
             </div>
             <!-- translate-y-[-100%] -->
@@ -63,8 +63,8 @@
                         <li class="magnet"><a href="#about">About</a></li>
                         <li class="magnet"><a href="#wedding">Weddings</a></li>
                         <li class="magnet"><a href="#preWedding">Pre Wedding</a></li>
-                        <li class="magnet"><a href="">Explore</a></li>
-                        <li class="magnet"><a href="">Contact</a></li>
+                        <li class="magnet"><a href="/pages/photos/">Explore</a></li>
+                        <li class="magnet"><a href="/pages/contacts/">Contact</a></li>
                     </ul>
                 </div> 
                 <div class="menuRight w-1/2 h-full flex flex-col justify-end items-center">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </nav>
-        <div class="page1 cursor-none bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
+        <div class="page1 cursor-non bg-[#fffef8] h-screen w-full px-[5vw] pt-[9vh] sm:pt-[11vh] sm:h-fit sm:pb-4 " id="home">
             <div class="headingContainer pl-[5vw] sm:pl-[0] pt-[4vw] sm:pt-[5vw] leading-[18vh] sm:leading-[10vh] w-full h-[52%] sm:h-[25vh] uppercase font-josefin font-[300]">
                 <h1 class="headChild1 flex gap-0 overflow-hidden text-[7vw] sm:text-[10vw]">chandan</h1>
                 <h1 class="headChild2 flex gap-[4vw] overflow-hidden text-[7vw] sm:text-[10vw] sm:pointer-events-none">photo gallery</h1>
@@ -128,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="page2 cursor-none min-h-screen w-full bg-[#fffef8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
+        <div class="page2 cursor-non min-h-screen w-full bg-[#fffef8] px-[7vw] pt-[6vw] pb-[3vw]" id="about">
             <div class="page2up w-full h-[80vh] sm:h-fit flex justify-center gap-[2vw] sm:overflow-hidden sm:flex-col-reverse">
                 <div class="page2upLeft w-3/5 sm:w-full h-full py-[2vw] sm:py-[10vw] flex flex-col gap-[2vw] sm:gap-[6vw] items-center justify-center">
                     <h1 class=" uppercase text-[1.4vw] sm:text-[3.1vw] sm:font-[700] font-josefin font-[350]">professional photographer in paikmal</h1>
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="page3 cursor-none overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] pb-[10vh] sm:pb-[5vw] sm:pt-[4vh] flex flex-col items-center gap-3">
+        <div class="page3 cursor-non overflow-hidden relative bg-[#FFFEF8] w-full h-fit pt-[7vh] pb-[10vh] sm:pb-[5vw] sm:pt-[4vh] flex flex-col items-center gap-3">
             <h1 id="gallery" class="text-center font-heading  text-[4vw] sm:text-[7vw] font-[300]">Photo Gallery</h1>
             <div class=" w-full px-[5vw] text-[1.5vw] text-center font-josefin">
                 <p class="py-10">Welcome to our photo gallery, where each image captures a cherished moment and tells an untold story. From joyous celebrations to intimate portraits, our gallery showcases the artistry and passion in every photograph. Immerse yourself in the timeless elegance of our visual narratives and let each picture speak the language of memories.</p>
@@ -261,7 +261,7 @@
                 </div>
             </div>
         </div>
-        <div class="page4 cursor-none min-h-screen w-full bg-[#fcf8e4]">
+        <div id="services" class="page4 cursor-non min-h-screen w-full bg-[#fcf8e4]">
             <h1 class=" text-center pt-[3vw] font-name  text-[3.5vw] font-[400] uppercase">Services We Provide</h1>
             <div class="serviceContainer relative overflow-hidden w-full h-[114vh] py-2 pb-5 flex flex-col items-center gap-5 mt-[3vw]">
                 <div class="service service1 w-full h-fit py-4  flex justify-center bg-[#fff5f5]">
@@ -425,12 +425,52 @@
                 </div>
             </div>
         </div>
-        <div class="page5 relative cursor-none min-h-screen w-full bg-[#ffe4e4] flex items-center justify-center">
+        <div class="page5 relative cursor-non min-h-[104vh] w-full bg-[#fefceb] flex items-center justify-center">
             <button id="SeeMore" title="show more" class="magnet px-6 py-0 absolute z-[2] top-[-0.2vw] text-[1.5vw] bg-[#d3549a] rounded-[2vw] flex"><i class="ri-arrow-down-wide-fill translate-y-[-5px]"></i></button>
           
         </div>
-        <div class="page6 noCursor min-h-screen w-full bg-[#00000069]">
-
+        <div class="page6 footer relative noCurso h-[76vh] w-full bg-[#202020] z-0 flex flex-col items-center">
+            <div class="upFooter flex h-[52%] w-full px-20">
+                <div class="footerLeft h-full w-1/2 flex flex-col items-start text-sm font-name  text-white gap-8 opacity-[0.8]">
+                    <div class="header">
+                        <div class="photo"><a href="/"><img class=" invert object-cover w-[4vw]" src="/images/logoImg.png" alt=""></a></div>
+                    </div>
+                    <div class="address">
+                        <h1 class="opacity-[1] font-bold">Address:</h1>
+                        <h4 class="ml-2">Near Georgegarh, Paikmal Bargarh.</h4>
+                    </div>
+                    <div class="con">
+                        <h1 class="opacity-[1] font-bold">Contact:</h1>
+                        <h4 class="ml-2">+913819831116</h4>
+                        <h4 class="ml-2">+913819831116</h4>
+                        <a href=""><h4 class="mailo ml-2 underline">abcd@email.com</h4></a>
+                    </div>
+                    <div class="social flex gap-3 text-[1.2vw]">
+                        <a href=""><i class="ri-instagram-line"></i></a>
+                        <a href=""><i class="ri-facebook-circle-line"></i></a>
+                    </div>
+                </div>
+                <div class="footerRight h-full w-1/2 flex justify-end">
+                    <div class="contai h-full w-[70%] flex"> 
+                        <div class="l h-full w-1/2 flex flex-col font-name font-[200] opacity-85 text-white gap-2 py-[5vh] items-start underline">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#services">Services</a>
+                            <a href="./pages/photos/">Explore</a>
+                        </div>
+                        <div class="r h-full w-1/2 flex flex-col font-name font-[200] opacity-85 text-white gap-2 py-[5vh] items-start underline">
+                            evfwr
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="downFooter h-[48%] w-[96%]">
+                <div class="svgcontainer w-full h-[70%] flex justify-center items-center">
+                    <svg width="100%" height="100%" class="">
+                        <path d="M 0 0 Q 0 0 0 0" stroke="white" fill="transparent"/>
+                    </svg>                      
+                </div>
+            </div>
         </div>
     </main>
 

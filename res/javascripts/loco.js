@@ -4,8 +4,6 @@ const locomotiveScroll = new LocomotiveScroll({
 });
 
 locomotiveScroll.start();
-locomotiveScroll.scrollTo(document.querySelector("#home"))
- 
   let read = document.querySelector("#rLink")
   read.addEventListener("click", function (e) {
     e.preventDefault()

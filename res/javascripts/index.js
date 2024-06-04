@@ -10,11 +10,14 @@ let currentImage = 0;
 let zoom = false;
 let menu = false;
 let menuOpen = true;
+let animationPlayed = new Boolean();
 
 let allImages = document.querySelectorAll("body img");
 allImages.forEach((image) => {});
 
 window.addEventListener("DOMContentLoaded", function () {
+  animationPlayed = localStorage.getItem("animationPlayed");
+
   if (window.innerWidth > 639) {
     cursor.style.display = "block";
     circleElement.style.display = "block";
@@ -25,10 +28,10 @@ window.addEventListener("DOMContentLoaded", function () {
   } else {
     cursor.style.display = "none";
     circleElement.style.display = "none";
-    curText.style.display = "none"
-    document.querySelectorAll(".cursor-none").forEach((element)=>{
+    curText.style.display = "none";
+    document.querySelectorAll(".cursor-none").forEach((element) => {
       element.classList.remove("cursor-none");
-    })
+    });
   }
 });
 
@@ -43,15 +46,27 @@ window.addEventListener("resize", function () {
   } else {
     cursor.style.display = "none";
     circleElement.style.display = "none";
-    document.querySelectorAll(".cursor-none").forEach((element)=>{
+    document.querySelectorAll(".cursor-none").forEach((element) => {
       element.classList.remove("cursor-none");
-    })
+    });
   }
-})
+});
 
 window.addEventListener("load", function () {
-  landingPageAnimation();
+  // if (!animationPlayed) {
+  //   // locomotiveScroll.scrollTo(document.querySelector("#home"));
+  //   landingPageAnimation();
+  // } else {
+  //   gsap.to(".loader", {
+  //     display: "none",
+  //     y: "-100%",
+  //   });
+  // }
 });
+
+setTimeout(() => {
+  localStorage.removeItem("animationPlayed");
+}, 20000);
 
 window.addEventListener("scroll", function (elem) {
   if (window.scrollY > 50) {
@@ -122,16 +137,16 @@ const closeOverlay = () => {
 secImgs.forEach((image) => {
   image.addEventListener("mouseover", () => {
     image.style.transform = "scale(1)";
-    gsap.to(curText,{
-      fontSize: "0.75vw"
-    })
+    gsap.to(curText, {
+      fontSize: "0.75vw",
+    });
     curText.innerHTML = "see<br>images";
     gsap.to(".cursor", {
       scale: 5.5,
       ease: "power4.out",
       duration: 1,
       mixBlendMode: "normal",
-      backgroundColor:"#000"
+      backgroundColor: "#000",
     });
     gsap.to(".curOutline", {
       opacity: 0,
@@ -140,15 +155,15 @@ secImgs.forEach((image) => {
   image.addEventListener("mouseout", () => {
     image.style.transform = "scale(1.2)";
     curText.textContent = "";
-    gsap.to(curText,{
-      fontSize: "0.9vw"
-    })
+    gsap.to(curText, {
+      fontSize: "0.9vw",
+    });
     gsap.to(".cursor", {
       scale: 1,
       ease: "power4.out",
       duration: 1,
       mixBlendMode: "difference",
-      backgroundColor:"#fff"
+      backgroundColor: "#fff",
     });
     gsap.to(".curOutline", {
       opacity: 1,
@@ -158,7 +173,7 @@ secImgs.forEach((image) => {
 
 let gLink = document.querySelector(".heroTextGl");
 gLink.addEventListener("click", function (e) {
-  locomotiveScroll.scrollTo(document.querySelector("#gallery"));
+  locomotiveScroll.scrollTo(document.querySelector(".page3"));//#gallery
 });
 gLink.addEventListener("mouseenter", function (e) {
   curText.textContent = "click";
@@ -192,15 +207,22 @@ const links = document.querySelectorAll(".navLinkContainer ul li a");
 
 links.forEach((link, idx) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault();
     const id = e.target.getAttribute("href").slice(1);
     const element = document.getElementById(id);
-    if (idx === 2) {
+    if (idx === 0) {
+      e.preventDefault();
+      locomotiveScroll.scrollTo(element);
+    } else if (idx === 1) {
+      e.preventDefault();
+      locomotiveScroll.scrollTo(element);
+    } else if (idx === 2) {
+      e.preventDefault();
       showWedding();
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 500);
     } else if (idx === 3) {
+      e.preventDefault();
       showPreWedding();
       setTimeout(() => {
         ScrollTrigger.refresh();
@@ -216,13 +238,26 @@ const menuLinks = document.querySelectorAll(".menu ul li a");
 menuLinks.forEach((link, idx) => {
   link.addEventListener("click", (e) => {
     locomotiveScroll.start();
-    e.preventDefault();
     const id = e.target.getAttribute("href").slice(1);
     const element = document.getElementById(id);
-    if (idx === 2) {
+    if (idx === 0) {
+      e.preventDefault();
+      locomotiveScroll.scrollTo(element);
+    } else if (idx === 1) {
+      e.preventDefault();
+      locomotiveScroll.scrollTo(element);
+    } else if (idx === 2) {
+      e.preventDefault();
       showWedding();
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
     } else if (idx === 3) {
+      e.preventDefault();
       showPreWedding();
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
     } else {
       locomotiveScroll.scrollTo(element);
     }
@@ -303,7 +338,7 @@ seeMoreBtn.addEventListener("click", () => {
   open = !open;
   see = !see;
   if (open) {
-    seeMoreBtn.title = "show less"
+    seeMoreBtn.title = "show less";
     upDown.classList.replace(
       "ri-arrow-down-wide-fill",
       "ri-arrow-up-wide-fill"
@@ -338,19 +373,18 @@ document.querySelectorAll(".noCursor").forEach((element) => {
   });
 });
 
-
-document.querySelectorAll(".service .za").forEach((element)=>{
+document.querySelectorAll(".service .za").forEach((element) => {
   element.addEventListener("mouseenter", () => {
-    gsap.to(curText,{
+    gsap.to(curText, {
       fontSize: "0.75vw",
-    })
+    });
     curText.textContent = "swipe";
     gsap.to(".cursor", {
       scale: 5.5,
       ease: "power4.out",
       duration: 1,
       mixBlendMode: "normal",
-      backgroundColor:"#000"
+      backgroundColor: "#000",
     });
     gsap.to(".curOutline", {
       opacity: 0,
@@ -358,18 +392,54 @@ document.querySelectorAll(".service .za").forEach((element)=>{
   });
   element.addEventListener("mouseleave", () => {
     curText.textContent = "";
-    gsap.to(curText,{
+    gsap.to(curText, {
       fontSize: "0.9vw",
-    })
+    });
     gsap.to(".cursor", {
       scale: 1,
       ease: "power4.out",
       duration: 1,
       mixBlendMode: "difference",
-      backgroundColor:"#fff"
+      backgroundColor: "#fff",
     });
     gsap.to(".curOutline", {
       opacity: 1,
     });
   });
+});
+
+
+const svgContainer = document.querySelector(".svgcontainer");
+const svgPath = document.querySelector(".svgcontainer svg path");
+let svgConDimention = svgContainer.getBoundingClientRect();
+let fllow = false;
+const svgH = svgConDimention.height;
+const svgW = svgConDimention.width;
+
+const initialPath = `M 0 ${svgH/2} Q ${svgW/2} ${svgH/2} ${svgW} ${svgH/2}`;
+let finalPath = `M 0 ${svgH/2} Q ${svgW/2} ${svgH/2} ${svgW} ${svgH/2}`;
+
+gsap.to("svg path",{
+  attr:{d:initialPath}
+})
+
+svgContainer.addEventListener('mousemove', (e) =>{
+  svgPath.addEventListener('mouseenter',()=>{
+    fllow = true;
+  })
+  if(fllow){finalPath = `M 0 ${svgH/2} Q ${e.offsetX} ${e.offsetY} ${svgW} ${svgH/2}`};
+  gsap.to("svg path",{
+    attr:{d:finalPath},
+    duration:0.5
+  })
+})
+
+svgContainer.addEventListener('mouseleave', (e) =>{
+  gsap.to("svg path",{
+    attr:{d:initialPath},
+    duration:2,
+    ease: "elastic.out(1.2,0.2)"
+  })
+    fllow = false;
+
 })
