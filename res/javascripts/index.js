@@ -408,7 +408,6 @@ document.querySelectorAll(".service .za").forEach((element) => {
   });
 });
 
-
 const svgContainer = document.querySelector(".svgcontainer");
 const svgPath = document.querySelector(".svgcontainer svg path");
 let svgConDimention = svgContainer.getBoundingClientRect();

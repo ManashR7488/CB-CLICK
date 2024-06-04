@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS-Studio|| GALLERY</title>
+    <link rel="shortcut icon" href="/images/favIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/res/stylesheets/main.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor fixed z-[991] h-[11px] w-[11px] pointer-events-none mix-blend-difference bg-[#ffffffe5] rounded-[50%] origin-center uppercase text-[0.2vw] text-center font-bold text-wrap leading-[1.5] flex items-center justify-center"></div>
+    <div class="curText fixed top-0 left-0 z-[992] text-white pointer-events-none font-bold text-[0.vw] uppercase text-center"></div>
+    <div class="curOutline"></div>
+    <div class="main">
+        <div class="page1 cursor-none h-screen w-full bg-black relative overflow-hidden">
+            <div class="up w-full h-[50vh] absolute left-0 top-0 bg-white overflow-hidden">
+                <h1 id="upText" class="galleryText text-[25vw] font-[900] absolute">GALLERY</h1>
+            </div>
+            <div class="center h-screen w-full bg-black flex justify-center items-start pt-[20vh] ">
+                <div class="content mt-[100vh] h-full w-full flex flex-col items-center">
+                    <h1 class="text-white">CHANDAN PHOTO GALLERY</h1>
+                </div>
+            </div>
+            <div class="down w-full h-[50vh] absolute left-0 bottom-0 bg-white overflow-hidden">
+                <h1 id="downText" class="galleryText text-[25vw] font-[900] absolute">GALLERY</h1>
+            </div>
+        </div>
+        <div class="page2 cursor-none h-screen w-full bg-black"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./gallery.functions.js"></script>
+    <script src="./gallery.script.js"></script>
+</body>
+</html>

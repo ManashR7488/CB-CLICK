@@ -1,0 +1,41 @@
+@font-face {
+    font-family: my;
+    src: url(/font/FoundersGroteskCondensed-Bold.ttf);
+}
+
+::-webkit-scrollbar{
+    width: 0.6vw;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+.curOutline{
+    --circle-size: 45px;
+    position: fixed;
+    z-index: 990;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+
+.galleryText{
+   font-family: my;
+   top: 100%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+#downText{
+    top: 0%;
+}
+
+/* .pin-spacer{
+    background-color: #000000;
+} */
