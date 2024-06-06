@@ -10,6 +10,7 @@ module.exports = {
       'inter':['"Inter", sans-serif'],
       'jost':['"Jost", sans-serif'],
       'josefin':['"Josefin Sans", sans-serif'],
+      'dancing':['"Dancing Script", cursive'],
     },
     screens: {
       '2xl': {'max': '1535px'},

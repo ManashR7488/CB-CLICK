@@ -171,7 +171,7 @@
     border-top-left-radius:38px;
     border-top-right-radius:38px;
 }
-.social a ,.mailo,.l a{
+.social a ,.mailo,.contai a{
     transition: color 0.2s linear;
 }
 
@@ -181,7 +181,7 @@
 .mailo:hover{
     color: aqua;
 }
-.l a:hover{
+.contai a:hover{
     color: aqua;
 }
 

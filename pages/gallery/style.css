@@ -1,6 +1,6 @@
 @font-face {
     font-family: my;
-    src: url(/font/FoundersGroteskCondensed-Bold.ttf);
+    src: url(/font/FoundersGroteskCondensed-Bold.woff2);
 }
 
 ::-webkit-scrollbar{
@@ -36,6 +36,28 @@
     top: 0%;
 }
 
-/* .pin-spacer{
+.pin-spacer{
     background-color: #000000;
-} */
+}
+
+
+
+.Gshow::before{
+    position: absolute;
+    top: 105%;
+    left: 0;
+    z-index: 0;
+    content: "";
+    height: 200%;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: all 0.8s ease;
+    
+}
+
+.Gshow:hover:before{
+    top: -50%;
+}

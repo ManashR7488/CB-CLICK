@@ -148,7 +148,7 @@ document
     if (idx === 0) {
       clt += `<div class="heroText flex gap-[1vw]">${e}</div>`;
     } else {
-      clt += `<div class="heroText heroTextGl magnet flex gap-[1vw]">${e}</div>`;
+      clt += `<a href="/pages/gallery/" class="heroText heroTextGl magnet flex gap-[1vw]">${e}</a>`;
     }
     document.querySelector(".headingContainer .headChild2").innerHTML = clt;
   });

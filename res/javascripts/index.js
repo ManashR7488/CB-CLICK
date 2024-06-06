@@ -12,8 +12,9 @@ let menu = false;
 let menuOpen = true;
 let animationPlayed = new Boolean();
 
-let allImages = document.querySelectorAll("body img");
-allImages.forEach((image) => {});
+
+// let allImages = document.querySelectorAll("body img");
+// allImages.forEach((image) => {});
 
 window.addEventListener("DOMContentLoaded", function () {
   animationPlayed = localStorage.getItem("animationPlayed");
@@ -53,15 +54,15 @@ window.addEventListener("resize", function () {
 });
 
 window.addEventListener("load", function () {
-  // if (!animationPlayed) {
-  //   // locomotiveScroll.scrollTo(document.querySelector("#home"));
-  //   landingPageAnimation();
-  // } else {
-  //   gsap.to(".loader", {
-  //     display: "none",
-  //     y: "-100%",
-  //   });
-  // }
+  if (!animationPlayed) {
+    // locomotiveScroll.scrollTo(document.querySelector("#home"));
+    landingPageAnimation();
+  } else {
+    gsap.to(".loader", {
+      display: "none",
+      y: "-100%",
+    });
+  }
 });
 
 setTimeout(() => {
@@ -173,7 +174,7 @@ secImgs.forEach((image) => {
 
 let gLink = document.querySelector(".heroTextGl");
 gLink.addEventListener("click", function (e) {
-  locomotiveScroll.scrollTo(document.querySelector(".page3"));//#gallery
+  // locomotiveScroll.scrollTo(document.querySelector(".page3"));//#gallery
 });
 gLink.addEventListener("mouseenter", function (e) {
   curText.textContent = "click";
@@ -199,7 +200,7 @@ function hideSection(sec) {
   }
   ScrollTrigger.refresh();
   setTimeout(() => {
-    locomotiveScroll.scrollTo(document.querySelector("#gallery"));
+    locomotiveScroll.scrollTo(document.querySelector(".page3"));
   }, time);
 }
 
@@ -410,10 +411,19 @@ document.querySelectorAll(".service .za").forEach((element) => {
 
 const svgContainer = document.querySelector(".svgcontainer");
 const svgPath = document.querySelector(".svgcontainer svg path");
-let svgConDimention = svgContainer.getBoundingClientRect();
+let rect = svgContainer.getBoundingClientRect();
 let fllow = false;
-const svgH = svgConDimention.height;
-const svgW = svgConDimention.width;
+let svgH = rect.height;
+let svgW = rect.width;
+
+function updateRect() {
+  rect = svgContainer.getBoundingClientRect();
+  svgH = rect.height;
+  svgW = rect.width;
+}
+
+window.addEventListener('scroll', updateRect);
+window.addEventListener('resize', updateRect);
 
 const initialPath = `M 0 ${svgH/2} Q ${svgW/2} ${svgH/2} ${svgW} ${svgH/2}`;
 let finalPath = `M 0 ${svgH/2} Q ${svgW/2} ${svgH/2} ${svgW} ${svgH/2}`;
@@ -423,22 +433,27 @@ gsap.to("svg path",{
 })
 
 svgContainer.addEventListener('mousemove', (e) =>{
-  svgPath.addEventListener('mouseenter',()=>{
+  // finalPath = `M 0 ${svgH/2} Q ${e.offsetX} ${e.offsetY} ${svgW} ${svgH/2}`;
+  // console.log(Math.abs((e.clintY)-(rect.top + rect.height / 2)))
+  if(Math.abs((e.clientY)-(rect.top + rect.height / 2)) < 7){
     fllow = true;
-  })
-  if(fllow){finalPath = `M 0 ${svgH/2} Q ${e.offsetX} ${e.offsetY} ${svgW} ${svgH/2}`};
+  }
+  if(fllow){
+    finalPath = `M 0 ${svgH/2} Q ${e.offsetX} ${e.offsetY} ${svgW} ${svgH/2}`;
+   }else{
+    finalPath = `M 0 ${svgH/2} Q ${svgW/2} ${svgH/2} ${svgW} ${svgH/2}`
+   }
   gsap.to("svg path",{
     attr:{d:finalPath},
-    duration:0.5
+    duration:0.2
   })
 })
 
 svgContainer.addEventListener('mouseleave', (e) =>{
   gsap.to("svg path",{
     attr:{d:initialPath},
-    duration:2,
-    ease: "elastic.out(1.2,0.2)"
+    duration:1.8,
+    ease: "elastic.out(2,0.2)"
   })
     fllow = false;
-
 })

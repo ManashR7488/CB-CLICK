@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./res/stylesheets/style.css">
 </head>
 <body class="">
-    <div class="loader hidden h-[100vh] w-[100vw] fixed z-[999] bg-white flex-col justify-center items-center">
+    <div class="loader flex h-[100vh] w-[100vw] fixed z-[999] bg-white flex-col justify-center items-center">
         <img src="./images/loadingNew.gif" alt="">
         <h4 class="relative top-[-9vh] text-[1.4vw]">Loading<span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span><span class="mr-[0.12vw]">.</span></h4>
         <h1 class="hidden overflow-hidden text-[3vw] h-[6.5vh] justify-center items-center">WELCOME~TO....</h1>
@@ -182,49 +182,16 @@
                     <div class="swiper mySwiperD flex items-center justify-center">
                         <div class="swiper-wrapper font-josefin uppercase font-[200] text-[2.5vw]">
                           <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] bottom-2">Event photos</h1>
                             <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
-                            <h1>click to view</h1>
                           </div>
                           <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] bottom-2">Wedding photos</h1>
                             <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
-                            <h1>click to view</h1>
                           </div>
                           <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
+                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] bottom-2">Pre-wedding photos</h1>
                             <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
-                            <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
-                            <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
-                            <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showEvent()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Event photos</h1>
-                            <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?cs=srgb&dl=pexels-bertellifotografia-2608517.jpg&fm=jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Wedding photos</h1>
-                            <img src="https://www.thewedcafe.com/wp-content/uploads/2020/05/09-PRD_0113-Edit.jpg" />
-                            <h1>click to view</h1>
-                          </div>
-                          <div onclick="showPreWedding()" class="swiper-slide bg-none flex flex-col gap-[1.5vw] items-center relative justify-center">
-                            <h1 class=" uppercase text-white absolute text-[4vw] font-[500] mix-blend-difference bottom-9">Pre-wedding photos</h1>
-                            <img src="https://madoverweddings.files.wordpress.com/2016/09/img_5345-watermark.jpg" />
-                            <h1>click to view</h1>
                           </div>
                         </div> 
                       </div>
@@ -429,11 +396,11 @@
             <button id="SeeMore" title="show more" class="magnet px-6 py-0 absolute z-[2] top-[-0.2vw] text-[1.5vw] bg-[#d3549a] rounded-[2vw] flex"><i class="ri-arrow-down-wide-fill translate-y-[-5px]"></i></button>
           
         </div>
-        <div class="page6 footer relative noCurso h-[76vh] w-full bg-[#202020] z-0 flex flex-col items-center">
-            <div class="upFooter flex h-[52%] w-full px-20">
+        <div class="page6 footer relative noCurso h-[65vh] pb-8 w-full bg-[#202020] z-0 flex flex-col items-center justify-between">
+            <div class="upFooter flex h-fit w-full px-20 ">
                 <div class="footerLeft h-full w-1/2 flex flex-col items-start text-sm font-name  text-white gap-8 opacity-[0.8]">
                     <div class="header">
-                        <div class="photo"><a href="/"><img class=" invert object-cover w-[4vw]" src="/images/logoImg.png" alt=""></a></div>
+                        <div class="photo magnet"><a href="/"><img class=" invert object-cover w-[4vw]" src="/images/logoImg.png" alt=""></a></div>
                     </div>
                     <div class="address">
                         <h1 class="opacity-[1] font-bold">Address:</h1>
@@ -456,19 +423,24 @@
                             <a href="#home">Home</a>
                             <a href="#about">About</a>
                             <a href="#services">Services</a>
-                            <a href="./pages/photos/">Explore</a>
                         </div>
                         <div class="r h-full w-1/2 flex flex-col font-name font-[200] opacity-85 text-white gap-2 py-[5vh] items-start underline">
-                            evfwr
+                            <a href="./pages/gallery/">gallery</a>
+                            <a href="./pages/photos/">Explore</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="downFooter h-[48%] w-[96%]">
-                <div class="svgcontainer w-full h-[70%] flex justify-center items-center">
+            <div class="downFooter h-[30%] w-[96%] relative">
+                <div class="svgcontainer relative z-[15] w-full h-[70%] flex justify-center items-center">
                     <svg width="100%" height="100%" class="">
                         <path d="M 0 0 Q 0 0 0 0" stroke="white" fill="transparent"/>
                     </svg>                      
+                </div>
+                <div class="details text-white font-name w-full h-fit text-sm flex justify-between items-center px-20">
+                    <h1><i class="ri-copyright-line"></i> 2024 CB Studio. <br>All right reserved</h1>
+                    <h1>Created by <a href="https://manashr7488.github.io/Portfolio/" class="underline ">MR2 Design Studio</a></h1>
+                    <h1><a class="underline" href="" >Terms and condition</a></h1>
                 </div>
             </div>
         </div>
