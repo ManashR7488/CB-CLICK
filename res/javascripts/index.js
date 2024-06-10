@@ -17,7 +17,7 @@ let animationPlayed = new Boolean();
 // allImages.forEach((image) => {});
 
 window.addEventListener("DOMContentLoaded", function () {
-  animationPlayed = localStorage.getItem("animationPlayed");
+  animationPlayed = sessionStorage.getItem("animationPlayed");
 
   if (window.innerWidth > 639) {
     cursor.style.display = "block";
@@ -66,7 +66,7 @@ window.addEventListener("load", function () {
 });
 
 setTimeout(() => {
-  localStorage.removeItem("animationPlayed");
+  sessionStorage.removeItem("animationPlayed");
 }, 20000);
 
 window.addEventListener("scroll", function (elem) {

@@ -1,17 +1,37 @@
-localStorage.setItem("animationPlayed", "true");
+sessionStorage.setItem("animationPlayed", "true");
 setTimeout(() => {
-  localStorage.removeItem("animationPlayed");
+  sessionStorage.removeItem("animationPlayed");
 }, 420000);
 
-let showGBtn = document.querySelector(".Gshow");
-
 const locomotiveScroll = new LocomotiveScroll({
-    autoStart: false,
+  autoStart: false,
+});
+
+locomotiveScroll.start();
+
+const showGBtn = document.querySelector(".Gshow");
+const container = document.querySelector(".Container");
+const gallery = document.querySelector(".gallery");
+let positions = shuffleArray(shuffleArray(generateRandomPositions(100)));
+let clt = "";
+const min = -4;
+const max = 7;
+images.forEach((link) => {
+  let S = Math.floor(Math.random() *(max - min +1)+ min);
+  S = S === 0 ? 1 : S
+  clt += `<div speed="${S}" class="img"><img src="${link}"></img></div>`;
+  });
+setTimeout(() => {
+  gallery.innerHTML = clt;
+  gsap.set(".img", {
+    top: "45%",
+    left: "50%",
+    transform: "translate(-50%, -50%) scale(0)",
   });
   
-  locomotiveScroll.start();
-  
-  window.addEventListener("DOMContentLoaded", () => {
+}, 100);
+
+window.addEventListener("DOMContentLoaded", () => {
     // gsap.from(".page1", {
     //   delay:1.5,
     //   opacity:0,
@@ -35,7 +55,7 @@ const locomotiveScroll = new LocomotiveScroll({
     }
   });
 
-  window.addEventListener('load', function(){
+window.addEventListener('load', function(){
     // console.log("loaded",mobile)
     
   })
@@ -65,6 +85,63 @@ tl.to(".page1 .up",{
     delay:window.innerWidth > 639? -0.3 : -0.5,
 })
 
+const newLoco = new LocomotiveScroll({
+  lenisOptions: {
+    wrapper: container,
+    content: document.querySelector(".inner"),
+    lerp: 0.1,
+    duration: 1.2,
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    smoothTouch: false,
+    wheelMultiplier: 1,
+    touchMultiplier: 2,
+    normalizeWheel: true,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+},
+  autoStart: false
+})
+
+let tl2 = gsap.timeline();
+tl2.pause();
+
+tl2.to(container,{
+  top:0
+});
+tl2.from(".Container p", {
+  y: 40,
+  ease: "power4.inOut",
+  duration: 1,
+  stagger: {
+    amount: 0.15,
+  },
+  delay: 0.5,
+});
+tl2.to(".Container p", {
+  top: "40px",
+  ease: "power4.inOut",
+  duration: 1,
+  stagger: {
+    amount: 0.15,
+  },
+  onComplete: () => {
+    document.querySelector(".header").remove();
+  },
+  delay:1.5,
+});
+tl2.from(".Container a", {
+  y: 20,
+  opacity: 0,
+  ease: "power2.out",
+  duration: 1,
+  stagger: {
+    amount: 0.15,
+  },
+});
+
+
+
 
 showGBtn.addEventListener("mouseover",()=>{
   gsap.to(".cursor", {
@@ -87,5 +164,24 @@ showGBtn.addEventListener("mouseout",()=>{
   });
 })
 showGBtn.addEventListener('click',()=>{
+  locomotiveScroll.stop();
+  newLoco.start();
+  locomotiveScroll.stop();
+  tl2.play();
+  gsap.to(".img", {
+    scale: 1,
+    width: "300px",
+    height: "400px",
+    stagger: 0.15,
+    duration: 0.75,
+    ease: "power2.out",
+    delay:1,
+    onComplete: ()=>{
+      scatterAndShrink(positions);
+    },
+  });
 
 })
+
+// const imgs = document.querySelectorAll(".img");
+

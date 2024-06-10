@@ -56,11 +56,11 @@ let landingPageAnimation = function () {
   tl1.from(".down .left", {
     opacity: 0,
     x: 100,
-  });
+  },'a');
   tl1.from(".down .right", {
     opacity: 0,
     x: -100,
-  });
+  },'a');
   tl2.from("#jgt9",{
     delay: 2,
     opacity: 0,
@@ -74,14 +74,14 @@ let landingPageAnimation = function () {
     duration: 1.5,
     ease: "elastic.out(1,0.5)",
     onStart:()=>{
-      localStorage.setItem("animationPlayed", "true");
+      sessionStorage.setItem("animationPlayed", "true");
     }
-  });
+  },'a');
   tl2.from(".description .left div div", {
     opacity: 0,
     y: 100,
     stagger: 0.2,
-  });
+  },'a');
 };
 
 gsap.to(".page1,.page2,.page3,.main,.page4", {

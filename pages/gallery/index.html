@@ -8,13 +8,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css' rel='stylesheet'/>
     <link rel="stylesheet" href="/res/stylesheets/main.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="relative">
     <div class="cursor fixed z-[991] h-[11px] w-[11px] pointer-events-none mix-blend-difference bg-[#ffffffe5] rounded-[50%] origin-center uppercase text-[0.2vw] text-center font-bold text-wrap leading-[1.5] flex items-center justify-center"></div>
     <div class="curText fixed top-0 left-0 z-[992] text-white pointer-events-none font-bold text-[0.vw] uppercase text-center"></div>
     <div class="curOutline"></div>
+    <div data-scroll class="Container text-white h-screen w-full fixed top-[100vh] left-0 z-[800] bg-[#000000] overflow-y-scroll">
+        <div class="inner h-[765vh] w-full ">
+            <div class="nav">
+                <a href="/">CS Studio</a>
+                <div onclick="reArrange()" class="refresh hidden text-white cursor-pointer"><i class="ri-loop-left-fill"></i></div>
+                <a href="/" class="uppercase">home</a>
+              </div>
+              <div class="header text-white">
+                  <div class="text">
+                      <p>In a Future</p>
+                      <div class="text-revealer"></div>
+                  </div>
+                  <div class="text">
+                      <p>not too distant</p>
+                      <div class="text-revealer"></div>
+                  </div>
+              </div>
+            <div class="gallery"></div>
+        </div>
+    </div>
+    <div class="overlay h-screen w-full fixed bg-[#000000c2] z-[995] flex justify-center items-center">
+        <div class="overlayImage h-[80vh] w-auto">
+            
+        </div>
+    </div>
     <div class="main">
         <div class="page1 opacity-1 cursor-none h-screen w-full bg-black relative overflow-hidden">
             <div class="up w-full h-[50vh] absolute left-0 top-0 bg-white overflow-hidden">
