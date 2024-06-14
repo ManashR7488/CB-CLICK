@@ -183,5 +183,22 @@ showGBtn.addEventListener('click',()=>{
 
 })
 
-// const imgs = document.querySelectorAll(".img");
+const closeBtn = document.querySelector('.closeBtn');
+closeBtn.addEventListener('click',()=>{
+  overlays.style.display = 'none';
+  setTimeout(() => {
+    closeBtn.style.backgroundColor = '#7a7a7aaf';
+  }, 100);
+});
+closeBtn.addEventListener('mouseenter',()=>{
+  gsap.to(closeBtn,{
+    backgroundColor:'#dadada',
+  })
+});
+closeBtn.addEventListener('mouseleave',()=>{
+  gsap.to(closeBtn,{
+    backgroundColor:'#7a7a7aaf',
+  })
+});
+
 

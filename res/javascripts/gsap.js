@@ -3,18 +3,13 @@ let tl2 = gsap.timeline();
 let tl3 = gsap.timeline();
 // tl3.pause();
 const loader = document.querySelector(".loader");
-// loader.style.display = "none";
 const loaderImg = document.querySelector(".loader img");
-const loaderText = document.querySelector(".loader h1");
 const root = document.querySelector(":root");
 let currentSection = 0; 
 tl2.pause();
 
 let cl = "";
-loaderText.textContent.split("").forEach((element) => {
-  cl += `<span style="display:inline-block"; id="pop">${element}</span>`;
-  loaderText.innerHTML = cl;
-});
+
 gsap.from(".loader h4 span",{
   opacity:0,
   stagger:0.2,
@@ -24,22 +19,14 @@ gsap.from(".loader h4 span",{
 let landingPageAnimation = function () {
   loaderImg.style.display = "none";
   document.querySelector(".loader h4").style.display = "none";
-  loaderText.style.display = "flex";
-  tl1.from("#pop", {
-    display: "none",
-    y: 100,
-    color: "#000000",
-    stagger: 0.2,
-  });
   tl1.to(".loader", {
-    // delay: 1,
     y: "-100%",
-    duration: 1.1,
+    duration: 0.9,
   });
   tl1.from(".page1", {
     backgroundColor: "#000000",
     transform: "scaleY(0)",
-    duration: 4,
+    duration: 3,
     ease: "expo.out",
     onStart: () => {
       gsap.from(".headingContainer .headChild1 span,.heroText span", {
@@ -64,17 +51,16 @@ let landingPageAnimation = function () {
   tl2.from("#jgt9",{
     delay: 2,
     opacity: 0,
-    x: -100,
-    duration: 1,
+    x: -50,
+    duration: 0.6,
   })
   tl2.from("nav", {
-    // delay: 1,
     y: "-100%",
     opacity: 0,
-    duration: 1.5,
+    duration: 1.1,
     ease: "elastic.out(1,0.5)",
     onStart:()=>{
-      sessionStorage.setItem("animationPlayed", "true");
+      // sessionStorage.setItem("animationPlayed", "true");
     }
   },'a');
   tl2.from(".description .left div div", {
