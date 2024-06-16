@@ -32,13 +32,13 @@ setTimeout(() => {
 }, 100);
 
 window.addEventListener("DOMContentLoaded", () => {
-    // gsap.from(".page1", {
-    //   delay:1.5,
-    //   opacity:0,
-    //   y:"-50%",
-    //   duration:1,
-    //   ease: "power4.out",
-    // });
+    gsap.to(".loader", {
+      delay:0.2,
+      // opacity:0,
+      y:"100%",
+      duration:2,
+      ease: "power4.out",
+    });
     if (window.innerWidth > 639) {
       cursor.style.display = "block";
       circleElement.style.display = "block";

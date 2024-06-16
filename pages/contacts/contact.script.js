@@ -1,6 +1,6 @@
-localStorage.setItem("animationPlayed", "true");
+sessionStorage.setItem("animationPlayed", "true");
 setTimeout(() => {
-  localStorage.removeItem("animationPlayed");
+  sessionStorage.removeItem("animationPlayed");
 }, 420000);
 
 ////// **************************************************************** //////
