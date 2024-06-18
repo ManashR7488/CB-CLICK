@@ -55,13 +55,16 @@ window.addEventListener("resize", function () {
 
 window.addEventListener("load", function () {
   if (!animationPlayed) {
-    // locomotiveScroll.scrollTo(document.querySelector("#home"));
-    landingPageAnimation();
+    locomotiveScroll.scrollTo(top);
+    setTimeout(() => {
+      landingPageAnimation();
+    }, 100);
   } else {
     gsap.to(".loader", {
       display: "none",
       y: "-100%",
     });
+// sessionStorage.setItem("animationPlayed", "true");
   }
 });
 
@@ -347,7 +350,11 @@ seeMoreBtn.addEventListener("click", () => {
     gsap.to(".serviceContainer", {
       height: "fit-content",
     });
-    ScrollTrigger.refresh();
+    locomotiveScroll.scrollTo(document.getElementById("89nffv89"));
+    setTimeout(() => {
+      // ScrollTrigger.update();
+      ScrollTrigger.refresh();
+    }, 500);
   } else {
     upDown.classList.replace(
       "ri-arrow-up-wide-fill",
@@ -358,7 +365,7 @@ seeMoreBtn.addEventListener("click", () => {
     });
     locomotiveScroll.scrollTo(document.getElementById("89nffv89"));
     setTimeout(() => {
-      ScrollTrigger.update();
+      ScrollTrigger.refresh();
     }, 500);
   }
 });

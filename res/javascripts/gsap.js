@@ -18,10 +18,11 @@ gsap.from(".loader h4 span",{
 })
 let landingPageAnimation = function () {
   loaderImg.style.display = "none";
+  // locomotiveScroll.scrollTo(document.querySelector("#home"));
   document.querySelector(".loader h4").style.display = "none";
   tl1.to(".loader", {
     y: "-100%",
-    duration: 0.9,
+    duration: 1.2,
   });
   tl1.from(".page1", {
     backgroundColor: "#000000",
@@ -60,7 +61,7 @@ let landingPageAnimation = function () {
     duration: 1.1,
     ease: "elastic.out(1,0.5)",
     onStart:()=>{
-      // sessionStorage.setItem("animationPlayed", "true");
+      sessionStorage.setItem("animationPlayed", "true");
     }
   },'a');
   tl2.from(".description .left div div", {
@@ -307,3 +308,23 @@ gsap.to(".main",{
     // markers:true
   }
 })
+
+
+let page5Tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:".page5 .content",
+    start: "top top",
+    end:"top -200%",
+    scrub:0.5,
+    pin: ".page5"
+    // markers:true
+  }
+})
+
+page5Tl.to(".page5 .content h1",{
+  x: "-51%",
+  fontWeight: "400"
+},'a')
+page5Tl.to(".page5",{
+  backgroundColor: "#fe5d56"
+},'a')

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: headigsNow;
+    src: url(/font/Heading-Now-Variable.ttf);
+}
+
 :root {
     --clrBg: #FFFEF8;
 }
@@ -156,13 +161,21 @@
     border-radius: 7px;
 }
 
+.page5 .content{
+    font-family: headigsNow;
+}
+.page5 .content h1{
+    font-stretch: 400%;
+    white-space: nowrap;
+}
+
 .page6{
     backdrop-filter: blur(7px);
 }
 
 .page6::before{
     content: "";
-    background-color: #202020;
+    background-color: #000000;
     height: 50px;
     width: 100%;
     position: fixed;
@@ -171,18 +184,19 @@
     border-top-left-radius:38px;
     border-top-right-radius:38px;
 }
+
 .social a ,.mailo,.contai a{
     transition: color 0.2s linear;
 }
 
 .social a:hover{
-    color: aqua;
+    color: #fe5d56;
 }
 .mailo:hover{
-    color: aqua;
+    color: #fe5d56;
 }
 .contai a:hover{
-    color: aqua;
+    color: #fe5d56;
 }
 
 .curOutline{
