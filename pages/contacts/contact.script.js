@@ -28,40 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener('load',()=>{
-    // Animation();
+    Animation();
 })
 
-gsap.set(".page1 .left .image",{scale:0})
 
-TextQ.addEventListener('mouseenter',(e)=>{
-  setTimeout(() => {
-    gsap.to(".page1 .left .image",{
-      scale:1,
-      duration:0.5,
-      ease:"power4.out",
-      onEnd: ()=>{
-        gsap.ticker.add(imageElastic);
-      }
-    })
-  }, 20);
-});
-
-TextQ.addEventListener('mouseleave',()=>{
-  gsap.ticker.remove(imageElastic);
-  gsap.to(".page1 .left .image",{
-    scale:0,
-    duration:0.5,
-  })
-});
-
-TextQ.addEventListener('mousemove',(e)=>{
-  gsap.to(".page1 .left .image",{
-    x:e.clientX,
-    y:e.clientY,
-    duration:0.2,
-  })
-  
-})
 
 noCursor.forEach((element)=>{
   element.addEventListener('mouseenter',(e)=>{

@@ -75,3 +75,7 @@
 a{
     cursor: none;
 }
+
+.page1 .right h1{
+    overflow: hidden;
+}

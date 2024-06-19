@@ -72,46 +72,45 @@ function elasticMouse() {
     transform: `${translateTransform} ${rotateTransform} ${scaleTransform}`,
   });
 }
-const imgSpeed = 0.11
-function imageElastic(){
-  circle.x += (mouse.x - circle.x) * imgSpeed;
-  circle.y += (mouse.y - circle.y) * imgSpeed;
 
-  const translateTransform = `translate(${circle.x}px, ${circle.y}px)`;
-
-  const deltaMouseX = mouse.x - previousMouse.x;
-  const deltaMouseY = mouse.y - previousMouse.y;
-
-  previousMouse.x = mouse.x;
-  previousMouse.y = mouse.y;
-
-  const mouseVelocity = Math.min(
-    Math.sqrt(deltaMouseX ** 2 + deltaMouseY ** 2) * 4,
-    150
-  );
-
-  const scaleValue = (mouseVelocity / 150) * 1.1;
-
-  currentScale += (scaleValue - currentScale) * imgSpeed;
-
-  const scaleTransform = `scale(${1 + currentScale}, ${1 - currentScale})`;
-
-  const angle =
-    (Math.atan2(circle.y - mouse.y, circle.x - mouse.x) * 180) / Math.PI;
-
-  if (mouseVelocity > 40) {
-    currentAngle = angle;
-  }
-
-  const rotateTransform = `rotate(${currentAngle}deg)`;
-  gsap.set(".page1 .left .image img", {
-    transform: `rotate(${-currentAngle}deg)`,
-  });
-  gsap.set(".page1 .left .image", {
-    transform: `${translateTransform} ${rotateTransform} ${scaleTransform}`,
-  });
-
-}
+const cursorCuberto = new MouseFollower({
+  el: null,
+  container: ".page1 .left .con",
+  className: 'mf-cursor',
+  innerClassName: 'mf-cursor-inner',
+  textClassName: 'mf-cursor-text',
+  mediaClassName: 'mf-cursor-media',
+  mediaBoxClassName: 'mf-cursor-media-box',
+  iconSvgClassName: 'mf-svgsprite',
+  iconSvgNamePrefix: '-',
+  iconSvgSrc: '',
+  dataAttr: 'cursor',
+  hiddenState: '-hidden',
+  textState: '-text',
+  iconState: '-icon',
+  activeState: '-active',
+  mediaState: '-media',
+  stateDetection: {
+      '-pointer': 'a,button',
+      '-hidden': 'iframe'
+  },
+  visible: true,
+  visibleOnState: false,
+  speed: 0.9,
+  ease: 'expo.out',
+  overwrite: true,
+  skewing: 0,
+  skewingText: 2,
+  skewingIcon: 2,
+  skewingMedia: 2,
+  skewingDelta: 0.001,
+  skewingDeltaMax: 0.15,
+  stickDelta: 0.15,
+  showTimeout: 20,
+  hideOnLeave: true,
+  hideTimeout: 300,
+  hideMediaTimeout: 300
+});
 
 
 let tl = gsap.timeline()
@@ -125,10 +124,23 @@ const Animation = ()=>{
     }).from(".TextQ h1>span",{
       y:200,
       stagger:0.08
+    }).from(".address h1 span",{
+      y:50,
+      stagger:0.08
+    },'a').from(".contact-Number h1 span",{
+      y:50,
+      stagger:0.08
+    },'a').from(".timing h1 span",{
+      y:50,
+      stagger:0.08
+    },'a').from(".social-links a",{
+      y:50,
+      stagger:0.08
     })
     .from(".nav",{
-      y:"-100%"
-    })
+      y:"-100%",
+      opacity:0
+    })  
 };
 
 const magnets = document.querySelectorAll(".magnet");

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/favIcon.png" type="image/x-icon">
     <link href='https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="./mouse.css">
     <link rel="stylesheet" href="/res/stylesheets/main.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -31,37 +32,36 @@
         </div>
         <div class="page1 cursor-none h-screen w-full bg-[#140900] flex">
             <div class="left h-full w-1/2  text-white relative flex justify-center items-center">
-                <div class="image overflow-hidden">
-                    <img class="object-cover h-full w-full object-center" src="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                </div>
-                <div class="TextQ noCursor absolute z-[3] w-[80%] h-[85%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] font-josefin font-[900] tracking-wide leading-[15vh]  ">
-                    <h1 class="overflow-hidden"><span class="flex">We’re</span></h1>
-                    <h1 class="overflow-hidden"><span class="flex">psyched</span></h1>
-                    <h1 class="overflow-hidden"><span class="flex">to <span class="text-orange-400 ml-[2.5vw]">work</span></span></h1>
-                    <h1 class="overflow-hidden"><span class="flex">for you</span></h1>
+                <div class="con w-[80%] h-[85%] relative">
+                    <div class="TextQ noCursor absolute z-[3] w-[100%] h-[100%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] font-josefin font-[900] tracking-wide leading-[15vh] " data-cursor-img="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <h1 class="overflow-hidden"><span class="flex">We’re</span></h1>
+                        <h1 class="overflow-hidden"><span class="flex">psyched</span></h1>
+                        <h1 class="overflow-hidden"><span class="flex">to <span class="text-orange-400 ml-[2.5vw]">work</span></span></h1>
+                        <h1 class="overflow-hidden"><span class="flex">for you</span></h1>
+                    </div>
                 </div>
             </div>
             <div class="right text-white w-1/2 flex flex-col justify-center items-center pt-10">
                 <div class="up w-full h-[25%] flex justify-between">
                     <div class="address w-1/2 pl-[5vw]">
-                        <h1>Near Georgegarh,</h1>
-                        <h1>Paikmal Bargarh, 768039,</h1>
-                        <h1>Odisha India</h1>
+                        <h1><span class="flex text-wrap">Near Georgegarh,</span></h1>
+                        <h1><span class="flex text-wrap">Paikmal Bargarh, 768039,</span></h1>
+                        <h1><span class="flex text-wrap">Odisha India</span></h1>
                     </div>
                     <div class="contact-Number w-[40%] px-3">
-                        <h1>+91 2201777770</h1>
-                        <h1>+91 2201777770</h1>
+                        <h1><span class="flex text-wrap">+91 2201777770</span></h1>
+                        <h1><span class="flex text-wrap">+91 2201777770</span></h1>
                     </div>
                 </div>
                 <div class="down w-full h-[25%] flex justify-between">
                     <div class="timing h-full w-1/2 pl-[5vw]">
-                        <h1>Mon-Thu 8.30am-12.30pm / 1.30pm-5.30pm</h1>
-                        <h1>Fri Sat 8.30am-12.30pm / 1.30pm-4.30pm</h1>
-                        <h1>Sunday Closed</h1>
+                        <h1><span class="flex text-wrap">Mon-Thu 8.30am-12.30pm / 1.30pm-5.30pm</span></h1>
+                        <h1><span class="flex text-wrap">Fri Sat 8.30am-12.30pm / 1.30pm-4.30pm</span></h1>
+                        <h1><span class="flex text-wrap">Sunday Closed</span></h1>
                     </div>
                     <div class="social w-[40%] flex flex-col gap-5">
                         <a class="w-fit" href="">abcd@gmail.com</a>
-                        <div class="social-links flex w-1/2 justify-start gap-[2vw]">
+                        <div class="social-links flex w-1/2 justify-start gap-[2vw] overflow-hidde">
                             <a class="text-[1.5vw]" href=""><i class="ri-instagram-fill"></i></a>
                             <a class="text-[1.5vw]" href=""><i class="ri-facebook-circle-fill"></i></a>
                             <a class="text-[1.5vw]" href=""><i class="ri-youtube-fill"></i></a>
@@ -73,11 +73,10 @@
         
     </main>
     
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrambleTextPlugin.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
     <script src="./contact.function.js"></script>
     <script src="./contact.script.js"></script>
 </body>
