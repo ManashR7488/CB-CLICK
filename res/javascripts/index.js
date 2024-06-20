@@ -70,7 +70,7 @@ window.addEventListener("load", function () {
 
 setTimeout(() => {
   sessionStorage.removeItem("animationPlayed");
-}, 20000);
+}, 25000);
 
 window.addEventListener("scroll", function (elem) {
   if (window.scrollY > 50) {

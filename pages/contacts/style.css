@@ -1,10 +1,10 @@
 ::-webkit-scrollbar {
-    width: 0.5vw;
+    width: 0.2vw;
 
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: #fb923c;
     border-radius: 10px !important;
     cursor: grab;
 }
@@ -39,6 +39,10 @@
     pointer-events: none;
 }
 
+.Gshow{
+    transition-delay: 0.2s;
+}
+
   .Gshow::before{
     position: absolute;
     top: 105%;
@@ -47,13 +51,16 @@
     content: "";
     height: 200%;
     width: 100%;
-    background-color:#dd7e31;
+    background-color:#fb923c;
     border-radius: 50%;
     pointer-events: none;
     mix-blend-mode: difference;
     transition: all 0.6s ease;
     /* transition: color 1s ease; */
     
+}
+.Gshow:hover{
+    border-color: #fb923c;
 }
 .Gshow:hover:before{
     top: -50%;
@@ -69,7 +76,7 @@
 }
 
 .social a:hover{
-    color: #dd7e31;
+    color: #fb923c;
 }
 
 a{
@@ -78,4 +85,14 @@ a{
 
 .page1 .right h1{
     overflow: hidden;
+}
+.sendBtn{
+    transition: all 0.3s ease;
+}
+
+.sendBtn:hover{
+    border-color: #fb923c;
+    background-color: #fb923c;
+    color: black;
+    font-weight: 600;
 }

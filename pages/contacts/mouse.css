@@ -89,9 +89,9 @@
 
 .mf-cursor-media {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    margin: -150px 0 0 -150px
+    width: 400px;
+    height: 400px;
+    margin: -200px 0 0 -200px
 }
 
 .mf-cursor-media img,

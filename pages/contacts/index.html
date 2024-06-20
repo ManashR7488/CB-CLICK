@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- <div class="loader fixed h-screen w-full bg-white z-[999]"></div> -->
     <div class="cursor fixed z-[991] h-[11px] w-[11px] pointer-events-none mix-blend-difference bg-[#ffffffe5] rounded-[50%] origin-center uppercase text-[0.2vw] text-center font-bold text-wrap leading-[1.5] flex items-center justify-center"></div>
     <div class="curText fixed top-0 left-0 z-[992] text-white pointer-events-none font-bold text-[0.vw] uppercase text-center"></div>
     <div class="curOutline"></div>
@@ -33,7 +34,7 @@
         <div class="page1 cursor-none h-screen w-full bg-[#140900] flex">
             <div class="left h-full w-1/2  text-white relative flex justify-center items-center">
                 <div class="con w-[80%] h-[85%] relative">
-                    <div class="TextQ noCursor absolute z-[3] w-[100%] h-[100%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] font-josefin font-[900] tracking-wide leading-[15vh] " data-cursor-img="https://images.unsplash.com/photo-1548516173-3cabfa4607e9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    <div class="TextQ noCursor absolute z-[3] w-[100%] h-[100%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] font-josefin font-[900] tracking-wide leading-[15vh] " data-cursor-img="/images/image.webp">
                         <h1 class="overflow-hidden"><span class="flex">We’re</span></h1>
                         <h1 class="overflow-hidden"><span class="flex">psyched</span></h1>
                         <h1 class="overflow-hidden"><span class="flex">to <span class="text-orange-400 ml-[2.5vw]">work</span></span></h1>
@@ -41,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right text-white w-1/2 flex flex-col justify-center items-center pt-10">
+            <div class="right text-white text-[1.11vw] w-1/2 flex flex-col justify-center items-center pt-10">
                 <div class="up w-full h-[25%] flex justify-between">
                     <div class="address w-1/2 pl-[5vw]">
                         <h1><span class="flex text-wrap">Near Georgegarh,</span></h1>
@@ -59,18 +60,44 @@
                         <h1><span class="flex text-wrap">Fri Sat 8.30am-12.30pm / 1.30pm-4.30pm</span></h1>
                         <h1><span class="flex text-wrap">Sunday Closed</span></h1>
                     </div>
-                    <div class="social w-[40%] flex flex-col gap-5">
-                        <a class="w-fit" href="">abcd@gmail.com</a>
-                        <div class="social-links flex w-1/2 justify-start gap-[2vw] overflow-hidde">
-                            <a class="text-[1.5vw]" href=""><i class="ri-instagram-fill"></i></a>
-                            <a class="text-[1.5vw]" href=""><i class="ri-facebook-circle-fill"></i></a>
-                            <a class="text-[1.5vw]" href=""><i class="ri-youtube-fill"></i></a>
+                    <div class="social w-[40%] h-full flex flex-col gap-2 overflow-hidden">
+                        <div class="gmail"><a class="w-fit" href="">abcd@gmail.com</a></div>
+                        <div class="social-links flex w-1/2 justify-start gap-[2vw]  overflow-hidden">
+                            <div class="ab">
+                                <a class="text-[1.5vw] block" href=""><i class="ri-instagram-fill i"></i></a>
+                            </div>
+                            <div class="ab">
+                                <a class="text-[1.5vw] block" href=""><i class="ri-facebook-circle-fill i"></i></a>
+                            </div>
+                            <div class="ab">
+                                <a class="text-[1.5vw] block" href=""><i class="ri-youtube-fill i"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <div class="page2 h-[100vh] w-full bg-[#140900] pt-[5vh]">
+            <div class="form-container relative h-fit w-full px-[5vw] text-white flex flex-col justify-start items-start">
+                <div class="formHeading pt-10 pb-[10vh]">
+                    <h1 class="text-[2vw] font-heading">Tell Us What You Think</h1>
+                    <p class=" font-inter">Fill out the form to receive a quote, we will contact you as soon as possible.</p>
+                </div>
+                <div class="contactImage right-2 top-[20%] absolute w-[30vw]">
+                    <img class=" object-cover" src="/images/Job-Offer-Letter.svg" alt="">
+                </div>
+                <form action="/pages/contacts/" class="bg-gray-20 grid grid-cols-[1fr_1fr] gap-x-[7vw] gap-y-[3vh] w-[60%] ">
+                    <input type="text" required placeholder="First Name" class="pb-[3vh] outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
+                    <input type="text" required placeholder="Last Name" class="pb-[3vh] outline-none  bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
+                    <input type="email" required placeholder="Email" class="pb-[3vh] outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
+                    <input type="number" required placeholder="Mob. Number" class="pb-[3vh] outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
+                    <textarea name="" id="" required placeholder="Write your message" class="min-h-[10vh] max-h-[35vh] pb-[3vh] col-start-1 col-end-3 outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]"></textarea>
+                    <div class="but-container flex justify-center items-center col-start-1 col-end-3 py-[3vh]" >
+                        <button type="submit" class="sendBtn relative border-[1px] px-5 py-1 rounded-full">SEND</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>

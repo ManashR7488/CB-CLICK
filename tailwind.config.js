@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./pages/**/*.{html,js}","*"],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        '16': 'repeat(16, minmax(0, 1fr))',
+        'form': '50px 50px',
+        // Complex site-specific column configuration
+        'footer': '200px minmax(900px, 1fr) 100px',
+      }
+    },
     fontFamily: {
       'heading': ['"Poetsen One", sans-serif'],
       'navLink':['"Montserrat", sans-serif'],

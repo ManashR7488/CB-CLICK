@@ -116,11 +116,15 @@ const cursorCuberto = new MouseFollower({
 let tl = gsap.timeline()
 
 const Animation = ()=>{
-    tl.from(".page1",{
+    tl.to(".loader",{
+      display:"none",
+      duration:0.1,
+      delay:0.2
+    }).from(".page1",{
         scaleY:0,
         scaleX:0.8,
         duration:0.6,
-        delay:1.2
+        // delay:1.2
     }).from(".TextQ h1>span",{
       y:200,
       stagger:0.08
@@ -133,14 +137,18 @@ const Animation = ()=>{
     },'a').from(".timing h1 span",{
       y:50,
       stagger:0.08
-    },'a').from(".social-links a",{
+    },'a').from(".social-links .ab",{
       y:50,
       stagger:0.08
-    })
+    },'a').from(".gmail",{
+      y:50,
+      opacity:0
+    },'a')
     .from(".nav",{
       y:"-100%",
-      opacity:0
-    })  
+      opacity:0,
+      duration:1
+    },'a')  
 };
 
 const magnets = document.querySelectorAll(".magnet");
