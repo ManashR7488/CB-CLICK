@@ -11,7 +11,11 @@ let zoom = false;
 let menu = false;
 let menuOpen = true;
 let animationPlayed = new Boolean();
-
+let cerviceContainer = document.querySelector(".serviceContainer")
+let service = document.querySelector(".service");
+let serviceDimention = service.getBoundingClientRect();
+let sConHeight = serviceDimention.height * 2 + 40
+cerviceContainer.style.height = sConHeight + "px";
 
 // let allImages = document.querySelectorAll("body img");
 // allImages.forEach((image) => {});
@@ -64,7 +68,6 @@ window.addEventListener("load", function () {
       display: "none",
       y: "-100%",
     });
-// sessionStorage.setItem("animationPlayed", "true");
   }
 });
 
@@ -361,7 +364,7 @@ seeMoreBtn.addEventListener("click", () => {
       "ri-arrow-down-wide-fill"
     );
     gsap.to(".serviceContainer", {
-      height: "114vh",
+      height: sConHeight,
     });
     locomotiveScroll.scrollTo(document.getElementById("89nffv89"));
     setTimeout(() => {
@@ -440,8 +443,6 @@ gsap.to("svg path",{
 })
 
 svgContainer.addEventListener('mousemove', (e) =>{
-  // finalPath = `M 0 ${svgH/2} Q ${e.offsetX} ${e.offsetY} ${svgW} ${svgH/2}`;
-  // console.log(Math.abs((e.clintY)-(rect.top + rect.height / 2)))
   if(Math.abs((e.clientY)-(rect.top + rect.height / 2)) < 7){
     fllow = true;
   }

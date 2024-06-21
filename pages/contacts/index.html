@@ -20,21 +20,21 @@
     <div class="curOutline"></div>
     <main class="relative overflow-x-hidden">
         <div class="nav cursor-none absolute w-full h-[10vh] flex justify-center items-center z-10">
-            <div class="content h-full w-[95%] px-[5vw] flex justify-between items-center">
-                <div class="image h-[80%]">
+            <div class="content h-full w-[95%] px-[5vw] sm:pr-0 flex justify-between items-center">
+                <div class="image h-[80%] sm:h-[65%]">
                     <a href="/"><img class="h-full invert" src="/images/logoImg.png" alt=""></a>
                 </div>
-                <div class="textContent h-full w-[50%] uppercase font-inter font-[400] text-white flex justify-evenly items-end">
-                    <a href="/" class="Gshow relative overflow-hidden px-3 py-1 border-white border-[1.5px] rounded-[17px]">home</a>
-                    <a href="" class="Gshow relative overflow-hidden px-3 py-1 border-white border-[1.5px] rounded-[17px]">about</a>
-                    <a href="/pages/gallery/" class="Gshow relative overflow-hidden px-3 py-1 border-white border-[1.5px] rounded-[17px]">gallery</a>
+                <div class="textContent h-full w-[50%] sm:w-[60%] uppercase font-inter font-[400] text-white flex justify-evenly items-end sm:items-center">
+                    <a href="/" class="Gshow relative overflow-hidden px-3 sm:text-[2.5vw] sm:px-2 py-1 border-white border-[1.5px] rounded-[17px]">home</a>
+                    <a href="" class="Gshow relative overflow-hidden px-3 sm:text-[2.5vw] sm:px-2 py-1 border-white border-[1.5px] rounded-[17px]">about</a>
+                    <a href="/pages/gallery/" class="Gshow relative overflow-hidden px-3 sm:text-[2.5vw] sm:px-2 py-1 border-white border-[1.5px] rounded-[17px]">gallery</a>
                 </div>
             </div>
         </div>
-        <div class="page1 cursor-none h-screen w-full bg-[#140900] flex">
-            <div class="left h-full w-1/2  text-white relative flex justify-center items-center">
-                <div class="con w-[80%] h-[85%] relative">
-                    <div class="TextQ noCursor absolute z-[3] w-[100%] h-[100%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] font-josefin font-[900] tracking-wide leading-[15vh] " data-cursor-img="/images/image.webp">
+        <div class="page1 cursor-none h-screen w-full bg-[#140900] flex sm:flex-col justify-center">
+            <div class="left h-full sm:h-1/2 w-1/2 sm:w-full text-white relative flex justify-center sm:justify-start sm:items-end items-center ">
+                <div class="con w-[80%] h-[85%] relative sm:pointer-events-none">
+                    <div class="TextQ noCursor  absolute z-[3] w-[100%] h-[100%]  flex flex-col justify-center items-start pl-[8vw] text-[7vw] sm:text-[15vw] font-josefin font-[900] tracking-wide leading-[15vh] sm:leading-[7vh]" data-cursor-img="/images/image.webp">
                         <h1 class="overflow-hidden"><span class="flex">We’re</span></h1>
                         <h1 class="overflow-hidden"><span class="flex">psyched</span></h1>
                         <h1 class="overflow-hidden"><span class="flex">to <span class="text-orange-400 ml-[2.5vw]">work</span></span></h1>
@@ -42,8 +42,8 @@
                     </div>
                 </div>
             </div>
-            <div class="right text-white text-[1.11vw] w-1/2 flex flex-col justify-center items-center pt-10">
-                <div class="up w-full h-[25%] flex justify-between">
+            <div class="right text-white text-[1.11vw] sm:text-[3vw] h-full sm:h-[30%] w-1/2 sm:w-full flex flex-col sm:gap-[3vh] justify-center sm:justify-start items-center pt-10">
+                <div class="up w-full h-[25%] sm:h-[30%] flex justify-between">
                     <div class="address w-1/2 pl-[5vw]">
                         <h1><span class="flex text-wrap">Near Georgegarh,</span></h1>
                         <h1><span class="flex text-wrap">Paikmal Bargarh, 768039,</span></h1>
@@ -62,15 +62,15 @@
                     </div>
                     <div class="social w-[40%] h-full flex flex-col gap-2 overflow-hidden">
                         <div class="gmail"><a class="w-fit" href="">abcd@gmail.com</a></div>
-                        <div class="social-links flex w-1/2 justify-start gap-[2vw]  overflow-hidden">
+                        <div class="social-links flex w-1/2 sm:w-full justify-start gap-[2vw] sm:gap-[4vw] overflow-hidden">
                             <div class="ab">
-                                <a class="text-[1.5vw] block" href=""><i class="ri-instagram-fill i"></i></a>
+                                <a class="text-[1.5vw] sm:text-[5vw] block" href=""><i class="ri-instagram-fill i"></i></a>
                             </div>
                             <div class="ab">
-                                <a class="text-[1.5vw] block" href=""><i class="ri-facebook-circle-fill i"></i></a>
+                                <a class="text-[1.5vw] sm:text-[5vw] block" href=""><i class="ri-facebook-circle-fill i"></i></a>
                             </div>
                             <div class="ab">
-                                <a class="text-[1.5vw] block" href=""><i class="ri-youtube-fill i"></i></a>
+                                <a class="text-[1.5vw] sm:text-[5vw] block" href=""><i class="ri-youtube-fill i"></i></a>
                             </div>
                         </div>
                     </div>
@@ -78,15 +78,15 @@
             </div>
         </div>
         <div class="page2 h-[100vh] w-full bg-[#140900] pt-[5vh]">
-            <div class="form-container relative h-fit w-full px-[5vw] text-white flex flex-col justify-start items-start">
-                <div class="formHeading pt-10 pb-[10vh]">
-                    <h1 class="text-[2vw] font-heading">Tell Us What You Think</h1>
-                    <p class=" font-inter">Fill out the form to receive a quote, we will contact you as soon as possible.</p>
+            <div class="form-container relative h-fit w-full px-[5vw] sm:px-0 text-white flex flex-col justify-start items-start">
+                <div class="formHeading pt-10 sm:pt-0 pb-[10vh]">
+                    <h1 class="text-[2vw] sm:text-[5vw] sm:px-[5vw] font-heading">Tell Us What You Think</h1>
+                    <p class=" font-inter sm:px-[4vw]">Fill out the form to receive a quote, we will contact you as soon as possible.</p>
                 </div>
-                <div class="contactImage right-2 top-[20%] absolute w-[30vw]">
+                <div class="contactImage right-2 top-[20%] absolute w-[30vw] sm:hidden">
                     <img class=" object-cover" src="/images/Job-Offer-Letter.svg" alt="">
                 </div>
-                <form action="/pages/contacts/" class="bg-gray-20 grid grid-cols-[1fr_1fr] gap-x-[7vw] gap-y-[3vh] w-[60%] ">
+                <form action="/pages/contacts/" class="bg-gray-20 grid grid-cols-[1fr_1fr] gap-x-[7vw] sm:gap-x-1 gap-y-[3vh] w-[60%]">
                     <input type="text" required placeholder="First Name" class="pb-[3vh] outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
                     <input type="text" required placeholder="Last Name" class="pb-[3vh] outline-none  bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
                     <input type="email" required placeholder="Email" class="pb-[3vh] outline-none bg-[#140900] px-3 py-1 border-b-[1px] border-orange-400 placeholder:text-zinc-500 focus:placeholder:translate-y-[-50%]">
