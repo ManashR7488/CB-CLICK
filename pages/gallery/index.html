@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="relative">
-    <div class="loader  fixed h-screen w-full bg-black z-[1000]"></div>
+    <!-- <div class="loader  fixed h-screen w-full bg-black z-[1000]"></div> -->
     <div class="cursor fixed z-[991] h-[11px] w-[11px] pointer-events-none mix-blend-difference bg-[#ffffffe5] rounded-[50%] origin-center uppercase text-[0.2vw] text-center font-bold text-wrap leading-[1.5] flex items-center justify-center"></div>
     <div class="curText fixed top-0 left-0 z-[992] text-white pointer-events-none font-bold text-[0.vw] uppercase text-center"></div>
     <div class="curOutline"></div>
     <div data-scroll class="Container cursor-none text-white h-screen w-full fixed top-[100vh] left-0 z-[800] bg-[#000000] overflow-y-scroll">
-        <div class="inner h-[765vh] w-full ">
+        <div class="inner h-[765vh] sm:h-[1250vh] w-full overflow-hidden">
             <div class="nav">
                 <a href="/">CB CLICK</a>
                 <div onclick="reArrange()" class="refresh hidden text-white cursor-pointer"><i class="ri-loop-left-fill"></i></div>
                 <a href="/" class="uppercase">home</a>
-              </div>
-              <div class="header text-white">
+            </div>
+              <div class="header text-white sm:hidden">
                   <div class="text">
                       <p>In a Future</p>
                       <div class="text-revealer"></div>
@@ -38,8 +38,8 @@
         </div>
     </div>
     <div class="overlay h-screen w-full fixed bg-[#00000097] z-[995] hidden justify-center items-center">
-        <div class="closeBtn cursor-pointer absolute h-[28px] w-[28px] right-10 top-10 z-[996] bg-[#7a7a7aaf] flex justify-center items-center rounded-[50%] p-5 text-[23px]"><i class="ri-close-line flex magnet"></i></div>
-        <div class="overlayImage h-[80vh] w-auto">
+        <div class="closeBtn cursor-pointer absolute h-[28px] w-[28px] right-10 top-10 z-[996] bg-[#7a7a7aaf] flex justify-center items-center rounded-[50%] p-5 text-[23px] text-white"><i class="ri-close-line flex magnet"></i></div>
+        <div class="overlayImage h-[80vh] w-auto sm:w-[90vw] sm:h-auto">
             <img src="" alt="" class="h-full object-cover">
         </div>
     </div>
@@ -49,11 +49,11 @@
                 <h1 id="upText" class="galleryText text-[25vw] font-[900] absolute">GALLERY</h1>
             </div>
             <div class="center h-screen w-full bg-black flex justify-center items-start pt-[15vh] ">
-                <div class="content relative text-white mt-[100vh] h-full w-full flex flex-col items-center gap-[5vh]">
-                    <h1 class="font-inter  text-[1.5vw] font-[700]">CHANDAN PHOTO GALLERY</h1>
-                    <p class="text-center px-[10vw] font-dancing text-[2vw] pt-[5vh] pb-[13vh]">Welcome to our gallery, where every image tells a unique story and every color captures a moment of beauty. We hope you enjoy this visual journey, filled with creativity and passion. Let your heart be touched by the artistry and love within these works. Enjoy your visit!</p>
-                    <h1 class="uppercase font-[my] text-[20vw] leading-3">(32)</h1>
-                    <button class="Gshow absolute bottom-8 border-[1px] border-white rounded-[15px] px-4 py-1 z-[10] overflow-hidden">View Photos</button>
+                <div class="content relative text-white mt-[100vh] h-full w-full flex flex-col items-center gap-[5vh] sm:gap-0">
+                    <h1 class="font-inter pointer-events-none text-[1.5vw] sm:text-[5vw] font-[700]">CHANDAN PHOTO GALLERY</h1>
+                    <p class="text-center pointer-events-none px-[10vw] sm:px-[7vw] font-dancing text-[2vw] sm:text-[5vw] pt-[5vh] pb-[13vh]">Welcome to our gallery, where every image tells a unique story and every color captures a moment of beauty. We hope you enjoy this visual journey, filled with creativity and passion. Let your heart be touched by the artistry and love within these works. Enjoy your visit!</p>
+                    <h1 class="uppercase pointer-events-none font-[my] text-[20vw] sm:text-[50vw] leading-3">(32)</h1>
+                    <button class="Gshow absolute bottom-8 sm:bottom-[10vh] border-[1px] border-white rounded-full px-4 py-1 z-[10] overflow-hidden">View Photos</button>
                 </div>
             </div>
             <div class="down w-full h-[50vh] absolute left-0 bottom-0 bg-white overflow-hidden">

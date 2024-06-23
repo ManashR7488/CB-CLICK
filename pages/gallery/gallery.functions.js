@@ -190,8 +190,10 @@ function generateRandomPositions(num) {
   const positions = [];
 
   for (let i = 0; i < num; i++) {
-    const top = Math.floor(Math.random() * 800) + "%";
-    const left = Math.floor(Math.random() * 93) + "%";
+    let St = (window.innerWidth > 639) ? 800 : 1300;
+    let Sl = (window.innerWidth > 639) ? 93 : 77;
+    const top = Math.floor(Math.random() * St) + "%";
+    const left = Math.floor(Math.random() * Sl) + "%";
     positions.push({ top, left });
   }
   return positions;
@@ -215,7 +217,7 @@ function scatterAndShrink(positions) {
           const S = image.getAttribute("speed");
           const xP = (window.innerWidth - e.clientX * S) / 150;
           const yP = (window.innerHeight - e.clientY * S) / 300;
-          let parallax = false;
+          let parallax = (window.innerWidth > 639) ? false : true;
           gsap.set(image, { zIndex: 800 });
           if (!parallax) {
             image.style.transform = `translate(${xP}px, ${yP}px)`;
@@ -261,7 +263,7 @@ function funcOverlay() {
   let actualImg = document.querySelectorAll(".img img");
   actualImg.forEach((img, i) => {
     img.addEventListener("click", () => {
-      console.log(img.src);
+      // console.log(img.src);
       overlayImg.src = img.src;
       overlays.style.display = "flex";
     });
