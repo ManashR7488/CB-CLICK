@@ -47,15 +47,15 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// window.addEventListener("load", function () {
-//   gsap.to(".loader", {
-//     delay: 0.2,
-//     // opacity:0,
-//     y: "100%",
-//     duration: 2,
-//     ease: "power4.out",
-//   });
-// });
+window.addEventListener("load", function () {
+  gsap.to(".loader", {
+    delay: 0.2,
+    // opacity:0,
+    y: "100%",
+    duration: 2,
+    ease: "power4.out",
+  });
+});
 
 let tl = gsap.timeline({
   scrollTrigger: {
